@@ -1,0 +1,6 @@
+[submodule "tests/mozilluminate/moztrap_integration/moztrapcli"]
+	path = tests/mozilluminate/moztrap_integration/moztrapcli
+	url = https://github.com/shinglyu/moztrap-cli.git
+[submodule "tests/mozilluminate/moztrap_integration/cucumber-js"]
+	path = tests/mozilluminate/moztrap_integration/cucumber-js
+	url = https://github.com/shinglyu/cucumber-js.git
