@@ -1,5 +1,5 @@
 before_install:
-  cd moztrap_integration/cucumber-js/; npm install ./; cd ../../
+  cd ./tests/mozilluminate/moztrap_integration/cucumber-js/; npm install ./; cd ../../../../
 install:
   - sudo pip install requests
-script: "ls ./tests/mozilluminate/; python ./tests/mozilluminate/sync.py"
+script: "python ./tests/mozilluminate/sync.py"
