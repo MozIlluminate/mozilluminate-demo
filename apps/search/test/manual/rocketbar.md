@@ -25,3 +25,7 @@ Feature: fxos.rocketbar
     Then Wow! Rocketbar appears
     When Repeatedly tap the rocketbar, furiously
     Then The rocket bar will explode (Just kidding)
+
+  Scenario: fxos.rocketbar.foo
+    When Tap the rocketbar 
+    Then Wow! Rocketbar appears
