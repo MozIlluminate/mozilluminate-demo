@@ -6,8 +6,8 @@ Feature: fxos.rocketbar
 
     Examples:
       | search term | search provider |
-      | star trek   | Yahoo           |
-      | star wars   | Google          |
+      | star trek   | Mozilla         |
+      | star wars   | Firefox         |
       | Dr. Who     | DuckDuckGo      |
 
   Scenario: fxos.rocketbar.launch
