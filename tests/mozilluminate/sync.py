@@ -18,6 +18,7 @@ if parser_error_code != 0:
 
 #TODO: detect for changed/added/delete case only and ignore the rest
 
-mtapi.mtorigin = "https://moztrap-dev.allizom.org"
-#The mz_user_name and mz_api_key is set in Travis CI
-mtapi.load_json_into_moztrap(tmpfile, {'username': os.getenv("mz_user_name"), 'api_key': os.getenv("mz_api_key")})
+if os.getenv("TRAVIS_PULL_REQUEST") == "false":
+    mtapi.mtorigin = "https://moztrap-dev.allizom.org"
+    #The mz_user_name and mz_api_key is set in Travis CI
+    mtapi.load_json_into_moztrap(tmpfile, {'username': os.getenv("mz_user_name"), 'api_key': os.getenv("mz_api_key")})
