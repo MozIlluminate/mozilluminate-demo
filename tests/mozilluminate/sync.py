@@ -1,5 +1,6 @@
 import moztrap_integration.moztrapcli.mtapi as mtapi
 import os
+import subprocess
 
 #TODO: eliminate this tmp file
 tmpfile="tmp.json"
@@ -11,7 +12,7 @@ testcase_files = [script_dir + "/../../apps/sms/test/manual/README.md"]
 cmd = "%s %s > %s" % (script_dir + '/../../node_modules/.bin/markdown-testfile-to-json',
                       ' '.join(testcase_files),
                       tmpfile)
-parser_error_code = os.system(cmd)
+parser_error_code = subprocess.call(cmd, shell=True)
 
 if parser_error_code != 0:
     exit(parser_error_code)
