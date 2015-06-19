@@ -1,25 +1,24 @@
-import subprocess
 import moztrap_integration.moztrapcli.mtapi as mtapi
 import os
 
 #TODO: eliminate this tmp file
-#tmpfile="tmp.txt"
 tmpfile="tmp.json"
 script_dir = os.path.dirname(os.path.realpath(__file__))
 
 #FIXME: hardcoded feature file name
-#testcase_files = [script_dir + "/../../apps/search/test/manual/rocketbar.md"]
 testcase_files = [script_dir + "/../../apps/sms/test/manual/README.md"]
 
-for testcase_file in testcase_files:
-    #cmd = "%s %s -r %s > %s" % (script_dir + '/moztrap_integration/cucumber-js/bin/cucumber.js', testcase_file,
-    #                            script_dir + '/moztrap_integration/step_definitions/moztrap.steps.js', tmpfile)
-    cmd = "%s %s > %s" % (script_dir + '/moztrap_integration/markdown-testfile-to-json/cli.js', testcase_file,
-                          tmpfile)
-    os.system(cmd)
+cmd = "%s %s > %s" % (script_dir + '/../../node_modules/.bin/markdown-testfile-to-json',
+                      ' '.join(testcase_files),
+                      tmpfile)
+parser_error_code = os.system(cmd)
+
+if parser_error_code != 0:
+    exit(parser_error_code)
+
 #TODO: detect for changed/added/delete case only and ignore the rest
 
+if os.getenv("TRAVIS_PULL_REQUEST") == "false":
     mtapi.mtorigin = "https://moztrap-dev.allizom.org"
-#The mz_user_name and mz_api_key is set in Travis CI
-    #mtapi.convert_mark_file_into_moztrap(tmpfile, {'username': os.getenv("mz_user_name"), 'api_key': os.getenv("mz_api_key")})
+    #The mz_user_name and mz_api_key is set in Travis CI
     mtapi.load_json_into_moztrap(tmpfile, {'username': os.getenv("mz_user_name"), 'api_key': os.getenv("mz_api_key")})
