@@ -17,3 +17,9 @@ id1 | none
 id2 | image
 
 Send an MMS with :attachment
+
+## fxos.messages.call_contact
+`bug 4`
+`story 5`
+
+From an exisiting conversation, call a contact.
