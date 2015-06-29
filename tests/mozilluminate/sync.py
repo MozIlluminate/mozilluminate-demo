@@ -7,7 +7,7 @@ tmpfile="tmp.json"
 script_dir = os.path.dirname(os.path.realpath(__file__))
 
 #FIXME: hardcoded feature file name
-testcase_files = [script_dir + "/../../apps/sms/test/manual/README.md"]
+testcase_files = [script_dir + "/../../apps/*/test/manual/*test.md"]
 
 cmd = "%s %s > %s" % (script_dir + '/../../node_modules/.bin/markdown-testfile-to-json',
                       ' '.join(testcase_files),
