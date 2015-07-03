@@ -40,3 +40,10 @@ id2 | b    | 2    | two two
 `draft`
 
 Launch rocketbar
+
+## fxos.func.sanity.launch_dialer
+`bug 4`
+`story 3`
+`draft`
+
+Launch dialer
