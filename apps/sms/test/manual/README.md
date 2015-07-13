@@ -47,3 +47,12 @@ Launch rocketbar
 `draft`
 
 Launch dialer
+
+## fxos.func.sanity.launch_settings
+`bug 4`
+`story 3`
+`draft`
+
+Launch settings, oh yeah!
+
+
