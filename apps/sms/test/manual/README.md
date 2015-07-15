@@ -55,4 +55,12 @@ Launch dialer
 
 Launch settings, oh yeah!
 
+# Test Suite 2
+
+## fxos.func.test_case_in_suite__two
+`bug 4`
+`story 3`
+`draft`
+
+FOOOOOOOOOOOOOOOOooo
 
