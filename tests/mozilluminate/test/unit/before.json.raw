@@ -1,0 +1,68 @@
+[
+    {
+        "name": "Launch suite",
+        "testcases": [
+            {
+                "bug": 2,
+                "id": "fxos.func.sanity.launch_contacts",
+                "instructions": "Launch contacts! this is an updated version",
+                "state": "draft",
+                "userStory": 1
+            },
+            {
+                "bug": 3,
+                "id": "fxos.func.sanity.launch_music",
+                "instructions": "Launch music",
+                "state": "disabled",
+                "userStory": 3
+            },
+            {
+                "bug": 3,
+                "id": "fxos.func.sanity.launch_sms_repeated",
+                "instructions": "Launch SMS and measure elapsed time\nDo it again.\nAnd again.",
+                "state": "xfail",
+                "userStory": 3
+            },
+            {
+                "id": "fxos.func.parameterized.test",
+                "instructions": "Launch the dialog, insert :val1, :val2, :val3 and hit enter.",
+                "state": "active",
+                "variables": [
+                    {
+                        "ID": "id1",
+                        "val1": "a",
+                        "val2": "1",
+                        "val3": "one one"
+                    },
+                    {
+                        "ID": "id2",
+                        "val1": "b",
+                        "val2": "2",
+                        "val3": "two two"
+                    }
+                ]
+            },
+            {
+                "bug": 4,
+                "id": "fxos.func.sanity.launch_rocketbar",
+                "instructions": "Launch rocketbar",
+                "state": "draft",
+                "userStory": 3
+            },
+            {
+                "bug": 4,
+                "id": "fxos.func.sanity.launch_dialer",
+                "instructions": "Launch dialer",
+                "state": "draft",
+                "userStory": 3
+            },
+            {
+                "bug": 4,
+                "id": "fxos.func.sanity.launch_settings",
+                "instructions": "Launch settings, oh yeah",
+                "state": "draft",
+                "userStory": 3
+            }
+        ]
+    }
+]

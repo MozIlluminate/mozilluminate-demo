@@ -1,0 +1,14 @@
+[
+    {
+        "name": "Launch suite",
+        "testcases": [
+            {
+                "bug": 2,
+                "id": "fxos.func.sanity.launch_contacts",
+                "instructions": "Launch contacts! this is an updated version",
+                "state": "draft",
+                "userStory": 1
+            }
+        ]
+    }
+]
