@@ -7,14 +7,6 @@
 
 Launch contacts! OH JUST MODIFIED
 
-## fxos.func.sanity.launch_music
-`bug 3 `
-`story 3`
-`disabled`
-
-Launch music
-
-
 ## fxos.func.sanity.launch_sms_repeated
 `bug 3 `
 `story 3`
