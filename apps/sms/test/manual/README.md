@@ -5,7 +5,7 @@
 `story 1`
 `draft`
 
-Launch contacts! this is an updated version
+Launch contacts! OH JUST MODIFIED
 
 ## fxos.func.sanity.launch_music
 `bug 3 `
