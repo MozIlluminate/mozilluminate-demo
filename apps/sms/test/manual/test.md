@@ -27,6 +27,7 @@ fxos.sms.add_a_contact_from_contact_app  |   |   | x |   |   |   |   | x |   |  
 fxos.sms.forward_sms                     |   |   | x |   |   |   |   | x |   |   |   |   |
 fxos.sms.forward_mms                     |   |   | x |   |   |   |   | x |   |   |   |   |
 fxos.sms.call_recipient                  |   |   | x |   |   |   |   | x |   |   |   |   |
+fxos.sms.dummy_test                      |   |   | x |   |   |   |   | x |   |   |   |   |
 
 
 ## fxos.sms.start_selection_here
@@ -178,3 +179,9 @@ Instructions for the test.
 `story 1`
 
 Instructions for the test.
+
+## fxos.sms.dummy_tes
+`bug 1187273`
+`story 10`
+
+These are the instructions for the dummy test.
