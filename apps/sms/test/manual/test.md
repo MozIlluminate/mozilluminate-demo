@@ -180,7 +180,7 @@ Instructions for the test.
 
 Instructions for the test.
 
-## fxos.sms.dummy_tes
+## fxos.sms.dummy_test
 `bug 1187273`
 `story 10`
 
