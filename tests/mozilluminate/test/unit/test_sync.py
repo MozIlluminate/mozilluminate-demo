@@ -14,10 +14,12 @@ import sync
 class TestSync(unittest.TestCase):
     # def setUp(self):
 
-    def _assertResult(self, adds, modifies, removes, exp_adds=[], exp_modifies=[], exp_removes=[]):
-        self.assertEqual(adds, exp_adds)
-        self.assertEqual(modifies, exp_modifies)
-        self.assertEqual(removes, exp_removes)
+    def _assertResult(self, diff, exp_adds=[], exp_modifies=[], exp_removes=[], exp_suite_adds=[], exp_suite_removes=[]):
+        self.assertEqual(diff['case']['added'], exp_adds)
+        self.assertEqual(diff['case']['modified'], exp_modifies)
+        self.assertEqual(diff['case']['removed'], exp_removes)
+        self.assertEqual(diff['suite']['added'], exp_suite_adds)
+        self.assertEqual(diff['suite']['removed'], exp_suite_removes)
 
     def test_summarize_diff_add_case(self):
         with open('before.json', 'r') as bf:
@@ -25,7 +27,7 @@ class TestSync(unittest.TestCase):
         with open('after_add_case.json', 'r') as af:
             after_json = json.load(af)
 
-        adds, modifies, removes = sync.summarize_diff(sync.flatten(before_json),
+        diff = sync.summarize_diff(sync.flatten(before_json),
                                                       sync.flatten(after_json))
 
         expected_adds= [{
@@ -36,7 +38,7 @@ class TestSync(unittest.TestCase):
                             "userStory": 1,
                             "suites": ["Launch suite"],
                         }]
-        self._assertResult(adds, modifies, removes,
+        self._assertResult(diff,
                            exp_adds= expected_adds)
 
     def test_summarize_diff_remove_case(self):
@@ -45,7 +47,7 @@ class TestSync(unittest.TestCase):
         with open('after_remove_case.json', 'r') as af:
             after_json = json.load(af)
 
-        adds, modifies, removes = sync.summarize_diff(sync.flatten(before_json),
+        diff = sync.summarize_diff(sync.flatten(before_json),
                                                       sync.flatten(after_json))
 
         expected_removes = [{
@@ -56,7 +58,7 @@ class TestSync(unittest.TestCase):
                                 "userStory": 3,
                                 "suites": ["Launch suite"],
                             }]
-        self._assertResult(adds, modifies, removes,
+        self._assertResult(diff,
                            exp_removes = expected_removes)
 
     def test_summarize_diff_modify_case(self):
@@ -65,7 +67,7 @@ class TestSync(unittest.TestCase):
         with open('after_modify_case.json', 'r') as af:
             after_json = json.load(af)
 
-        adds, modifies, removes = sync.summarize_diff(sync.flatten(before_json),
+        diff = sync.summarize_diff(sync.flatten(before_json),
                                                       sync.flatten(after_json))
 
         expected_modifies= [{
@@ -76,7 +78,7 @@ class TestSync(unittest.TestCase):
                                 "userStory": 1,
                                 "suites": ["Launch suite"],
                             }]
-        self._assertResult(adds, modifies, removes,
+        self._assertResult(diff,
                            exp_modifies= expected_modifies)
 
     def test_summarize_diff_add_suite_and_move_case_between_suite(self):
@@ -85,7 +87,7 @@ class TestSync(unittest.TestCase):
         with open('after_move_between_suite.json', 'r') as af:
             after_json = json.load(af)
 
-        adds, modifies, removes = sync.summarize_diff(sync.flatten(before_json),
+        diff = sync.summarize_diff(sync.flatten(before_json),
                                                       sync.flatten(after_json))
 
         expected_modifies = [{
@@ -96,8 +98,9 @@ class TestSync(unittest.TestCase):
                                 "userStory": 3,
                                 "suites": ["Close suite"]
                             }]
-        self._assertResult(adds, modifies, removes,
-                           exp_modifies= expected_modifies)
+        self._assertResult(diff,
+                           exp_modifies = expected_modifies,
+                           exp_suite_adds = expected_modifies[0]['suites'])
 
     def test_summarize_diff_delete_suite(self):
         with open('before.json', 'r') as bf:
@@ -105,7 +108,7 @@ class TestSync(unittest.TestCase):
 
         after_json = []
 
-        adds, modifies, removes = sync.summarize_diff(sync.flatten(before_json),
+        diff = sync.summarize_diff(sync.flatten(before_json),
                                                       sync.flatten(after_json))
 
         expected_removes = [
@@ -126,8 +129,9 @@ class TestSync(unittest.TestCase):
                 "suites": ["Launch suite"]
             }
         ]
-        self._assertResult(adds, modifies, removes,
-                           exp_removes= expected_removes)
+        self._assertResult(diff,
+                           exp_removes = expected_removes,
+                           exp_suite_removes = expected_removes[0]['suites']  )
 
     def test_flatten(self):
         with open('before.json', 'r') as bf:

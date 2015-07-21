@@ -17,6 +17,8 @@ def flatten(suites):
     return flattened
 
 def summarize_diff(before, after):
+    # TODO: we may want to output the part that has changed only, e.g. steps vs
+    # case modifiers
     added = []
     modified = []
     removed = []
@@ -47,7 +49,29 @@ def summarize_diff(before, after):
                     if x not in before
                         and x['id'] in intersect_titles]
 
-    return (added, modified, removed)
+    before_suites = set()
+    after_suites = set()
+
+    for case in before:
+        before_suites = before_suites.union(case['suites'])
+    for case in after:
+        after_suites = before_suites.union(case['suites'])
+
+    added_suites = list(after_suites.difference(before_suites))
+    removed_suites = list(before_suites.difference(after_suites))
+
+    #return (added, modified, removed, added_suites, removed_suites)
+    return ({
+        'case':{
+            'added':added,
+            'modified':modified,
+            'removed':removed
+        },
+        'suite':{
+            'added':added_suites,
+            'removed':removed_suites,
+        }
+    })
 
 
         #added = list(set(new) - set(old))
@@ -94,6 +118,8 @@ def main():
         testcase_before.flush()
         testcase_after.flush()
 
+        before_json = []
+        after_json = []
         #cmd = "%s %s > %s" % (script_dir + '/moztrap_integration/markdown-testfile-to-json/cli.js', testcase_file,
         #                    parsed_json_f.name)
         #os.system(cmd)
@@ -101,7 +127,9 @@ def main():
         before_json += json.loads(subprocess.check_output([script_dir + '/moztrap_integration/markdown-testfile-to-json/cli.js', testcase_before.name]))
         after_json += json.loads(subprocess.check_output([script_dir + '/moztrap_integration/markdown-testfile-to-json/cli.js', testcase_after.name]))
 
-        diff = summarize_diff(before_json, after_json)
+        diff = summarize_diff(flatten(before_json), flatten(after_json))
+        # diff = (add, modify, remove)
+        print json.dumps(diff, indent=3)
 
 
     #parsed_json_f = tempfile.NamedTemporaryFile()
