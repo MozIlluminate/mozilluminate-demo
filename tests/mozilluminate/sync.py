@@ -96,6 +96,7 @@ def main():
 #print(updated_diffs)
 
 #for testcase_file in testcase_files:
+    diff_outs = []
     for diff in updated_diffs:
         #how to deteced diff type:
         #if diff.new_file: #&& edit only
@@ -127,9 +128,9 @@ def main():
         before_json += json.loads(subprocess.check_output([script_dir + '/moztrap_integration/markdown-testfile-to-json/cli.js', testcase_before.name]))
         after_json += json.loads(subprocess.check_output([script_dir + '/moztrap_integration/markdown-testfile-to-json/cli.js', testcase_after.name]))
 
-        diff = summarize_diff(flatten(before_json), flatten(after_json))
+        diff_outs.append(summarize_diff(flatten(before_json), flatten(after_json)))
         # diff = (add, modify, remove)
-        print json.dumps(diff, indent=3)
+        #print json.dumps(diff_out, indent=3)
 
 
     #parsed_json_f = tempfile.NamedTemporaryFile()
@@ -138,7 +139,8 @@ def main():
 #The mz_user_name and mz_api_key is set in Travis CI
 #mtapi.convert_mark_file_into_moztrap(tmpfile, {'username': os.getenv("mz_user_name"), 'api_key': os.getenv("mz_api_key")})
     #mtapi.load_json_into_moztrap(parsed_json_f.name, {'username': os.getenv("mz_user_name"), 'api_key': os.getenv("mz_api_key")})
-    mtapi.sync_diff_to_moztrap(diff, {'username': os.getenv("mz_user_name"), 'api_key': os.getenv("mz_api_key")})
+    print diff_outs
+    mtapi.sync_diff_to_moztrap(diff_outs, {'username': os.getenv("mz_user_name"), 'api_key': os.getenv("mz_api_key")})
 
 if __name__ == '__main__':
     main()
