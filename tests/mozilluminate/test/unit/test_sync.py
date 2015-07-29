@@ -14,11 +14,13 @@ import sync
 class TestSync(unittest.TestCase):
     # def setUp(self):
 
-    def _assertResult(self, diff, exp_adds=[], exp_modifies=[], exp_removes=[], exp_suite_adds=[], exp_suite_removes=[]):
+    def _assertResult(self, diff, exp_adds=[], exp_modifies=[], exp_removes=[],
+                      exp_suite_adds=[], exp_suite_existing = ['Launch suite'], exp_suite_removes=[]):
         self.assertEqual(diff['case']['added'], exp_adds)
         self.assertEqual(diff['case']['modified'], exp_modifies)
         self.assertEqual(diff['case']['removed'], exp_removes)
         self.assertEqual(diff['suite']['added'], exp_suite_adds)
+        self.assertEqual(diff['suite']['existing'], exp_suite_existing)
         self.assertEqual(diff['suite']['removed'], exp_suite_removes)
 
     def test_summarize_diff_add_case(self):
@@ -100,6 +102,7 @@ class TestSync(unittest.TestCase):
                             }]
         self._assertResult(diff,
                            exp_modifies = expected_modifies,
+                           exp_suite_existing= ['Launch suite'],
                            exp_suite_adds = expected_modifies[0]['suites'])
 
     def test_summarize_diff_delete_suite(self):
@@ -131,6 +134,7 @@ class TestSync(unittest.TestCase):
         ]
         self._assertResult(diff,
                            exp_removes = expected_removes,
+                           exp_suite_existing = [],
                            exp_suite_removes = expected_removes[0]['suites']  )
 
     def test_flatten(self):

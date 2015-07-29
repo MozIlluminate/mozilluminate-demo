@@ -59,6 +59,7 @@ def summarize_diff(before, after):
 
     added_suites = list(after_suites.difference(before_suites))
     removed_suites = list(before_suites.difference(after_suites))
+    existing_suites = list(before_suites.intersection(after_suites))
 
     #return (added, modified, removed, added_suites, removed_suites)
     return ({
@@ -69,6 +70,7 @@ def summarize_diff(before, after):
         },
         'suite':{
             'added':added_suites,
+            'existing':existing_suites,
             'removed':removed_suites,
         }
     })
