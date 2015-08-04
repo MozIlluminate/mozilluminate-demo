@@ -79,6 +79,8 @@ class TestSync(unittest.TestCase):
                                 "state": "draft",
                                 "userStory": 1,
                                 "suites": ["Launch suite"],
+                                "suites_added": [],
+                                "suites_removed": []
                             }]
         self._assertResult(diff,
                            exp_modifies= expected_modifies)
@@ -93,12 +95,14 @@ class TestSync(unittest.TestCase):
                                                       sync.flatten(after_json))
 
         expected_modifies = [{
-                                "bug": 4,
-                                "id": "fxos.func.sanity.launch_settings",
-                                "instructions": "Launch settings, oh yeah",
-                                "state": "draft",
-                                "userStory": 3,
-                                "suites": ["Close suite"]
+                                u"bug": 4,
+                                u"id": "fxos.func.sanity.launch_settings",
+                                u"instructions": u"Launch settings, oh yeah",
+                                u"state": u"draft",
+                                u"userStory": 3,
+                                u"suites": ["Close suite"],
+                                u"suites_added": ["Close suite"],
+                                u"suites_removed": ["Launch suite"]
                             }]
         self._assertResult(diff,
                            exp_modifies = expected_modifies,

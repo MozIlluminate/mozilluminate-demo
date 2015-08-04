@@ -20,6 +20,7 @@ def summarize_diff(before, after):
     # TODO: we may want to output the part that has changed only, e.g. steps vs
     # case modifiers
     added = []
+    tmp_modified = []
     modified = []
     removed = []
 
@@ -45,9 +46,19 @@ def summarize_diff(before, after):
     removed += [ x for x in before
                     if x not in after
                         and x['id'] not in intersect_titles]
-    modified += [ x for x in after
+    tmp_modified += [ x for x in after
                     if x not in before
                         and x['id'] in intersect_titles]
+    modified = []
+
+    for aftermodifiedcase in tmp_modified:
+        beforemodifiedcase = filter(lambda x: x['id'] == aftermodifiedcase['id'], before)[0]
+        before_s = set(beforemodifiedcase['suites'])
+        after_s = set(aftermodifiedcase['suites'])
+        aftermodifiedcase['suites_added'] = list(after_s.difference(before_s))
+        aftermodifiedcase['suites_removed'] = list(before_s.difference(after_s))
+        modified.append(aftermodifiedcase)
+
 
     before_suites = set()
     after_suites = set()
@@ -108,15 +119,17 @@ def main():
 
         testcase_before = tempfile.NamedTemporaryFile()
         testcase_after = tempfile.NamedTemporaryFile()
+        before_file_is_empty = False
 
         try:
             testcase_before.write(diff.a_blob.data_stream.read())
         except AttributeError:
             testcase_before.write(json.dumps([]))
+            before_file_is_empty = True
         try:
             testcase_after.write(diff.b_blob.data_stream.read())
         except AttributeError:
-            testcase_before.write(json.dumps([]))
+            testcase_after.write(json.dumps([]))
 
         testcase_before.flush()
         testcase_after.flush()
@@ -127,7 +140,8 @@ def main():
         #                    parsed_json_f.name)
         #os.system(cmd)
         #print subprocess.check_output(['cat', testcase_before.name])
-        before_json += json.loads(subprocess.check_output([script_dir + '/moztrap_integration/markdown-testfile-to-json/cli.js', testcase_before.name]))
+        if not before_file_is_empty:
+            before_json += json.loads(subprocess.check_output([script_dir + '/moztrap_integration/markdown-testfile-to-json/cli.js', testcase_before.name]))
         after_json += json.loads(subprocess.check_output([script_dir + '/moztrap_integration/markdown-testfile-to-json/cli.js', testcase_after.name]))
 
         diff_outs.append(summarize_diff(flatten(before_json), flatten(after_json)))
