@@ -48,3 +48,11 @@ WHEN Test the following:
   * modify existing suite name (??)
   * remove suite
 * remove file
+
+## End to end (no delete)
+WHEN Open a new file and new case, commit
+THEN Case added and is the the new suite
+WHEN Edit the instruction in old case, commit 
+THEN Case updated
+WHEN Create a new suite, move the case to the new suite, delete the old suite, commit
+THEN Case moved to new suite, old suite is empty
