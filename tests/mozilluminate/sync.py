@@ -66,7 +66,7 @@ def summarize_diff(before, after):
     for case in before:
         before_suites = before_suites.union(case['suites'])
     for case in after:
-        after_suites = before_suites.union(case['suites'])
+        after_suites = after_suites.union(case['suites'])
 
     added_suites = list(after_suites.difference(before_suites))
     removed_suites = list(before_suites.difference(after_suites))
