@@ -50,9 +50,17 @@ WHEN Test the following:
 * remove file
 
 ## End to end (no delete)
-WHEN Open a new file and new case, commit
-THEN Case added and is the the new suite
-WHEN Edit the instruction in old case, commit 
-THEN Case updated
-WHEN Create a new suite, move the case to the new suite, delete the old suite, commit
-THEN Case moved to new suite, old suite is empty
+WHEN Open a new suite A and new case X, commit
+THEN Case X added and is the the new suite A
+
+WHEN Edit the instruction in old case X, commit 
+THEN Case X updated
+
+WHEN Create a new suite B, move the case X to the new suite B, delete the old suite A, commit
+THEN Case moved to new suite B, old suite A is deleted
+
+WHEN Move the case X back to the old suite A, add a new case Y to suite B, commit
+THEN Case X moved to suite A, case Y is created and is in suite B
+
+WHEN Delete case Y and suite B, commit
+THEN Case Y and Suite B deleted
