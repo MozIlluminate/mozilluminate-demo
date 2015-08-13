@@ -1,6 +1,5 @@
 sudo: false
 before_install:
-  - cd ./tests/mozilluminate/moztrap_integration/cucumber-js/; npm install ./; cd ../../../../; 
   - cd ./tests/mozilluminate/moztrap_integration/markdown-testfile-to-json/; npm install ./; cd ../../../../;
 install:
   - pip install --user requests gitpython
