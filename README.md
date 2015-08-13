@@ -10,8 +10,8 @@ Our goal is to enable user to write test cases in source code repos like [mozill
 This repo replicates the folder structure for [mozilla-b2g/gaia](https://github.com/mozilla-b2g/gaia).
 
 1. Clone this repo
-2. Create/Edit test cases under `apps/\<app name\>/test/manual/test_\<something\>.md`
-> Check [`apps/example/test/manual/test_example.md`](https://github.com/MozIlluminate/mozilluminate-demo/blob/master/apps/example/test/manual/test_example.md) for example)
+2. Create/Edit test cases under `apps/\<app name\>/test/manual/test_\<something\>.md` ( 
+ Check [`apps/example/test/manual/test_example.md`](https://github.com/MozIlluminate/mozilluminate-demo/blob/master/apps/example/test/manual/test_example.md) for example)
 3. `git add`, `git commit` and `git push` (You are suggested to create a new branch)
 4. Create a pull request to this repo. A automatic syntax check will be triggered on [Travis CI](https://travis-ci.org/MozIlluminate/mozilluminate-demo/pull_requests)
 5. If the syntax check failed, go back to step 2 and fix your syntax.
