@@ -14,13 +14,3 @@ Launch contacts app. It works!
 
 Launch contacts app. Add a contact. The contact is successfully added
 
-
-## fxos.func.parameterized.test
-Launch the dialog, insert :val1, :val2, :val3 and hit enter.
-
-ID  | val1 | val2 | val3 |
---- | ---- | ---- | -----
-id1 | a    | 1    | one one
-id2 | b    | 2    | two two
-
-
