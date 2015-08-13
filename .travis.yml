@@ -3,4 +3,4 @@ before_install:
   - cd ./tests/mozilluminate/moztrap_integration/markdown-testfile-to-json/; npm install ./; cd ../../../../;
 install:
   - sudo pip install requests gitpython
-script: "python ./tests/mozilluminate/sync.py"
+script: "cd ./tests/mozilluminate; python sync.py"
