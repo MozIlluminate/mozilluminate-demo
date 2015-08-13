@@ -10,7 +10,7 @@ Launch contacts app. It works!
 ## fxos.func.sanity.add_contacts
 `bug 3 `
 `story 3`
-`xfail`
+`active`
 
 Launch contacts app. Add a contact. The contact is successfully added
 
