@@ -97,8 +97,7 @@ def main():
     tmpfile="tmp.json"
     script_dir = os.path.dirname(os.path.realpath(__file__))
 
-#FIXME: hardcoded feature file name
-#testcase_files = [script_dir + "/../../apps/search/test/manual/rocketbar.md"]
+#FIXME: hardcoded feature file name #testcase_files = [script_dir + "/../../apps/search/test/manual/rocketbar.md"]
 #testcase_files = [script_dir + "/../../apps/sms/test/manual/README.md"]
 
     repo = Repo('../../')
@@ -156,7 +155,10 @@ def main():
 #mtapi.convert_mark_file_into_moztrap(tmpfile, {'username': os.getenv("mz_user_name"), 'api_key': os.getenv("mz_api_key")})
     #mtapi.load_json_into_moztrap(parsed_json_f.name, {'username': os.getenv("mz_user_name"), 'api_key': os.getenv("mz_api_key")})
     print diff_outs
-    mtapi.sync_diff_to_moztrap(diff_outs, {'username': os.getenv("mz_user_name"), 'api_key': os.getenv("mz_api_key")})
+
+    isPR = os.getenv('TRAVIS_PULL_REQUEST')
+    if isPR == 'false' or isPR is None: #Don't sync PR builds
+        mtapi.sync_diff_to_moztrap(diff_outs, {'username': os.getenv("mz_user_name"), 'api_key': os.getenv("mz_api_key")})
 
 if __name__ == '__main__':
     main()
