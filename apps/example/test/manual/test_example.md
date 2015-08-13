@@ -1,4 +1,4 @@
-This should break
+# Example Suite
 ## fxos.func.sanity.launch_contacts
 `bug 2 `
 `story 1`
@@ -13,6 +13,5 @@ Launch contacts app. It works!
 
 Launch contacts app. Add a contact. The contact is successfully added
 
-###### This is a bad formatting
 
 
