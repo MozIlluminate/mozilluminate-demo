@@ -5,6 +5,7 @@ import os
 import tempfile
 from git import Repo
 import json
+import re
 
 #TODO: eliminate this tmp file
 #tmpfile="tmp.txt"
@@ -147,13 +148,37 @@ def main():
             before_json += json.loads(subprocess.check_output([script_dir + '/moztrap_integration/markdown-testfile-to-json/cli.js', testcase_before.name]))
             flatten_before_json = flatten(before_json)
             for testcase_json in flatten_before_json:
-                testcase_json['instructions'] = orm.parseCaseStep(testcase_json['instructions'])
+                extended_testcase_json = []
+
+                for variable in testcase_json['variables']:
+                    temp = testcase_json['instructions']
+
+                    for index, value in variable.iteritems():
+                        regex = re.compile(':' + str(index))
+                        temp = regex.sub(value, temp)
+
+                    extended_testcase_json.append(temp)
+
+                testcase_json['instructions'] = extended_testcase_json
+                testcase_json['instructions'] = orm.parseCaseStep('\n'.join(testcase_json['instructions']))
 
         after_json += json.loads(subprocess.check_output([script_dir + '/moztrap_integration/markdown-testfile-to-json/cli.js', testcase_after.name]))
 
         flatten_after_json = flatten(after_json)
         for testcase_json in flatten_after_json:
-            testcase_json['instructions'] = orm.parseCaseStep(testcase_json['instructions'])
+            extended_testcase_json = []
+
+            for variable in testcase_json['variables']:
+                temp = testcase_json['instructions']
+
+                for index, value in variable.iteritems():
+                    regex = re.compile(':' + str(index))
+                    temp = regex.sub(value, temp)
+
+                extended_testcase_json.append(temp)
+
+            testcase_json['instructions'] = extended_testcase_json
+            testcase_json['instructions'] = orm.parseCaseStep('\n'.join(testcase_json['instructions']))
 
         diff_outs.append(summarize_diff(flatten_before_json, flatten_after_json))
         # diff = (add, modify, remove)
