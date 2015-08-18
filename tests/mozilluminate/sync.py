@@ -1,5 +1,6 @@
 import subprocess
 import moztrap_integration.moztrapcli.mtapi as mtapi
+import moztrap_integration.moztrapcli.orm as orm
 import os
 import tempfile
 from git import Repo
@@ -135,15 +136,26 @@ def main():
 
         before_json = []
         after_json = []
+
+        flatten_before_json = []
+        flatten_after_json = []
         #cmd = "%s %s > %s" % (script_dir + '/moztrap_integration/markdown-testfile-to-json/cli.js', testcase_file,
         #                    parsed_json_f.name)
         #os.system(cmd)
         #print subprocess.check_output(['cat', testcase_before.name])
         if not before_file_is_empty:
             before_json += json.loads(subprocess.check_output([script_dir + '/moztrap_integration/markdown-testfile-to-json/cli.js', testcase_before.name]))
+            flatten_before_json = flatten(before_json)
+            for testcase_json in flatten_before_json:
+                testcase_json['instructions'] = orm.parseCaseStep(testcase_json['instructions'])
+
         after_json += json.loads(subprocess.check_output([script_dir + '/moztrap_integration/markdown-testfile-to-json/cli.js', testcase_after.name]))
 
-        diff_outs.append(summarize_diff(flatten(before_json), flatten(after_json)))
+        flatten_after_json = flatten(after_json)
+        for testcase_json in flatten_after_json:
+            testcase_json['instructions'] = orm.parseCaseStep(testcase_json['instructions'])
+
+        diff_outs.append(summarize_diff(flatten_before_json, flatten_after_json))
         # diff = (add, modify, remove)
         #print json.dumps(diff_out, indent=3)
 
