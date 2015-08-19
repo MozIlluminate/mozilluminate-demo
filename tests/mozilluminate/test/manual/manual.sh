@@ -53,7 +53,7 @@ sync
 pause
 
 sed -i "s/ B / A /g" test$timeid.md
-printf "\n# Suite B $timeid\n\n## fxos.smoke.Y\n\`bug 2\`\n\`story 1\`\n\`active\`\n\n This is a NEW case\n" >> test$timeid.md
+printf "\n# Suite B $timeid\n\n## fxos.smoke.Y\n\`bug 2\`\n\`story 1\`\n\`active\`\n\n WHEN This is a NEW case\n" >> test$timeid.md
 git add test$timeid.md
 git commit -m "Move case X back to suite A, create new case Y in suite B"
 
