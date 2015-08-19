@@ -96,8 +96,6 @@ def summarize_diff(before, after):
 
 
 def expand_table_if_exist(testcase_json):
-    import pdb
-    pdb.set_trace()
     if 'variables' not in testcase_json:
         return testcase_json['instructions']
     else:
