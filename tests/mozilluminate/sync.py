@@ -150,14 +150,19 @@ def main():
             for testcase_json in flatten_before_json:
                 extended_testcase_json = []
 
-                for variable in testcase_json['variables']:
-                    temp = testcase_json['instructions']
 
-                    for index, value in variable.iteritems():
-                        regex = re.compile(':' + str(index))
-                        temp = regex.sub(value, temp)
+                if 'variables' in testcase_json:
+                    for variable in testcase_json['variables']:
+                        temp = testcase_json['instructions']
 
-                    extended_testcase_json.append(temp)
+                        for index, value in variable.iteritems():
+                            regex = re.compile(':' + str(index))
+                            temp = regex.sub(value, temp)
+
+                        extended_testcase_json.append(temp)
+                else:
+                    extended_testcase_json = testcase_json['instructions']
+
 
                 testcase_json['instructions'] = extended_testcase_json
                 testcase_json['instructions'] = orm.parseCaseStep('\n'.join(testcase_json['instructions']))
