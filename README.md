@@ -1,5 +1,4 @@
-MozIlluminate
-[![Build Status](https://travis-ci.org/MozIlluminate/mozilluminate-demo.svg)](https://travis-ci.org/MozIlluminate/mozilluminate-demo)
+MozIlluminate [![Build Status](https://travis-ci.org/MozIlluminate/mozilluminate-demo.svg)](https://travis-ci.org/MozIlluminate/mozilluminate-demo) 
 ============================
 
 This repo is an example of MozIlluminate, our next-generation test case management system for Firefox OS QA
