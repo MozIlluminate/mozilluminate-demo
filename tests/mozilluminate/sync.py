@@ -136,8 +136,8 @@ def main():
 
         testcase_before = tempfile.NamedTemporaryFile()
         testcase_after = tempfile.NamedTemporaryFile()
-        after_file_is_empty = False
         before_file_is_empty = False
+        after_file_is_empty = False
 
         try:
             testcase_before.write(diff.a_blob.data_stream.read())
@@ -148,6 +148,7 @@ def main():
             testcase_after.write(diff.b_blob.data_stream.read())
         except AttributeError:
             testcase_after.write(json.dumps([]))
+            after_file_is_empty = True
 
         testcase_before.flush()
         testcase_after.flush()
@@ -166,17 +167,15 @@ def main():
             before_json += json.loads(subprocess.check_output([script_dir + '/moztrap_integration/markdown-testfile-to-json/cli.js', testcase_before.name]))
             flatten_before_json = flatten(before_json)
             for testcase_json in flatten_before_json:
-
                 testcase_json['instructions'] = expand_table_if_exist(testcase_json)
                 testcase_json['instructions'] = orm.parseCaseStep(testcase_json['instructions'])
 
-        after_json += json.loads(subprocess.check_output([script_dir + '/moztrap_integration/markdown-testfile-to-json/cli.js', testcase_after.name]))
-
-        flatten_after_json = flatten(after_json)
-        for testcase_json in flatten_after_json:
-
-            testcase_json['instructions'] = expand_table_if_exist(testcase_json)
-            testcase_json['instructions'] = orm.parseCaseStep(testcase_json['instructions'])
+        if not after_file_is_empty:
+            after_json += json.loads(subprocess.check_output([script_dir + '/moztrap_integration/markdown-testfile-to-json/cli.js', testcase_after.name]))
+            flatten_after_json = flatten(after_json)
+            for testcase_json in flatten_after_json:
+                testcase_json['instructions'] = expand_table_if_exist(testcase_json)
+                testcase_json['instructions'] = orm.parseCaseStep(testcase_json['instructions'])
 
         diff_outs.append(summarize_diff(flatten_before_json, flatten_after_json))
         # diff = (add, modify, remove)
