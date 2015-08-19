@@ -95,6 +95,24 @@ def summarize_diff(before, after):
     #print before_json
 
 
+def expand_table_if_exist(testcase_json):
+    import pdb
+    pdb.set_trace()
+    if 'variables' not in testcase_json:
+        return testcase_json['instructions']
+    else:
+        extended_testcase_json = []
+        for variable in testcase_json['variables']:
+            temp = testcase_json['instructions']
+
+            for index, value in variable.iteritems():
+                regex = re.compile(':' + str(index))
+                temp = regex.sub(value, temp)
+
+            extended_testcase_json.append(temp)
+        return "\n".join(extended_testcase_json)
+
+
 def main():
     tmpfile="tmp.json"
     script_dir = os.path.dirname(os.path.realpath(__file__))
@@ -148,42 +166,17 @@ def main():
             before_json += json.loads(subprocess.check_output([script_dir + '/moztrap_integration/markdown-testfile-to-json/cli.js', testcase_before.name]))
             flatten_before_json = flatten(before_json)
             for testcase_json in flatten_before_json:
-                extended_testcase_json = []
 
-
-                if 'variables' in testcase_json:
-                    for variable in testcase_json['variables']:
-                        temp = testcase_json['instructions']
-
-                        for index, value in variable.iteritems():
-                            regex = re.compile(':' + str(index))
-                            temp = regex.sub(value, temp)
-
-                        extended_testcase_json.append(temp)
-                else:
-                    extended_testcase_json = testcase_json['instructions']
-
-
-                testcase_json['instructions'] = extended_testcase_json
-                testcase_json['instructions'] = orm.parseCaseStep('\n'.join(testcase_json['instructions']))
+                testcase_json['instructions'] = expand_table_if_exist(testcase_json)
+                testcase_json['instructions'] = orm.parseCaseStep(testcase_json['instructions'])
 
         after_json += json.loads(subprocess.check_output([script_dir + '/moztrap_integration/markdown-testfile-to-json/cli.js', testcase_after.name]))
 
         flatten_after_json = flatten(after_json)
         for testcase_json in flatten_after_json:
-            extended_testcase_json = []
 
-            for variable in testcase_json['variables']:
-                temp = testcase_json['instructions']
-
-                for index, value in variable.iteritems():
-                    regex = re.compile(':' + str(index))
-                    temp = regex.sub(value, temp)
-
-                extended_testcase_json.append(temp)
-
-            testcase_json['instructions'] = extended_testcase_json
-            testcase_json['instructions'] = orm.parseCaseStep('\n'.join(testcase_json['instructions']))
+            testcase_json['instructions'] = expand_table_if_exist(testcase_json)
+            testcase_json['instructions'] = orm.parseCaseStep(testcase_json['instructions'])
 
         diff_outs.append(summarize_diff(flatten_before_json, flatten_after_json))
         # diff = (add, modify, remove)

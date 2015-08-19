@@ -30,7 +30,7 @@ echo "Test env created"
 
 pause
 
-printf "# Suite A $timeid\n\n## fxos.smoke.X\n\`bug 2\`\n\`story 1\`\n\`active\`\n\n WHEN This is a NEW case\nTHEN foo\n\nWHEN I click the button\nTHEN magic happends" > test$timeid.md
+printf "# Suite A $timeid\n\n## fxos.smoke.X\n\`bug 2\`\n\`story 1\`\n\`active\`\n\n WHEN This is a NEW case\nTHEN foo\nWHEN I click the button\nTHEN magic happends" > test$timeid.md
 git add test$timeid.md
 git commit -m "Created new case X in new suite A"
 
