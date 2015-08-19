@@ -1,17 +1,28 @@
 # Example Suite
 ## fxos.func.sanity.launch_contacts
-`bug 2 `
-`story 1`
 `draft`
 
-Launch contacts app. It works!
+WHEN Launch contacts app. 
+THEN It works!
 
 ## fxos.func.sanity.add_contacts
-`bug 3 `
-`story 3`
 `active`
 
-Launch contacts app. Add a contact. The contact is successfully added
+WHEN Launch contacts app. 
+THEN It opens
+WHEN Add a contact. 
+THEN The contact is successfully added
+
+## fxos.func.sanity.click_buttons
+`disabled`
+
+WHEN I click the :color button
+THEN The button :behavior
+
+| color |  behavior |
+|-------|-----------|
+| green |  glows    |
+| red   |  disappers|
 
 
 
