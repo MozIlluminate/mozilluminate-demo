@@ -136,6 +136,7 @@ def main():
 
         testcase_before = tempfile.NamedTemporaryFile()
         testcase_after = tempfile.NamedTemporaryFile()
+        after_file_is_empty = False
         before_file_is_empty = False
 
         try:
@@ -160,7 +161,8 @@ def main():
         #                    parsed_json_f.name)
         #os.system(cmd)
         #print subprocess.check_output(['cat', testcase_before.name])
-        if not before_file_is_empty:
+        #TODO: Reduce this duplication to a function
+        if not before_file_is_empty: #TODO:remove this flag?
             before_json += json.loads(subprocess.check_output([script_dir + '/moztrap_integration/markdown-testfile-to-json/cli.js', testcase_before.name]))
             flatten_before_json = flatten(before_json)
             for testcase_json in flatten_before_json:
