@@ -44,17 +44,20 @@ def main():
         test_steps_col = wks.col_values(test_steps_title.col)
         test_descriptions_title = wks.find('Descriptions / Prerequisite')
         test_descriptions_col = wks.col_values(test_descriptions_title.col)
+        test_tags_title = wks.find('Tag')
+        test_tags_col = wks.col_values(test_tags_title.col)
 #cell_list = wks.range('A1:B7')
         #test_cases = zip(test_cases_col, test_steps_col)[1:] #Skip the title row
-        test_cases = zip(test_cases_col, test_steps_col, test_descriptions_col)[1:] #Skip the title row
+        test_cases = zip(test_cases_col, test_steps_col, test_descriptions_col, test_tags_col)[1:] #Skip the title row
         test_cases_json = []
         for test_case in test_cases:
             if test_case[0] != "":
                 test_cases_json.append({
                     'id': test_case[0],
-                    'instructions':test_case[1], # need to parse it
-                    'description':test_case[2], # need to parse it
-                    'suites':[sps.title], # need to decide suite
+                    'instructions':test_case[1],
+                    'description':test_case[2],
+                    'suites':[sps.title],
+                    'tags':test_case[3].split(','),
                     'state':'active'
                 })
                 #print u"Title: {}".format(test_case[0])
