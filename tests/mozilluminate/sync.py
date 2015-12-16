@@ -121,7 +121,7 @@ def main():
     repo = Repo('../../')
    # repo = Repo('../../../../') #for debuggin
 
-    updated_diffs = filter(lambda x: "apps" in x.b_path and "test/manual" in x.b_path, repo.commit('HEAD~1').diff('HEAD'))
+    updated_diffs = filter(lambda x: "testcases" in x.b_path, repo.commit('HEAD~1').diff('HEAD'))
 
 #print(updated_diffs)
 
@@ -140,14 +140,16 @@ def main():
         after_file_is_empty = False
 
         try:
-            testcase_before.write(diff.a_blob.data_stream.read())
+            #testcase_before.write(diff.a_blob.data_stream.read())
+            testcase_before = diff.a_blob.data_stream.read()
         except AttributeError:
-            testcase_before.write(json.dumps([]))
+            #testcase_before.write(json.dumps([]))
             before_file_is_empty = True
         try:
-            testcase_after.write(diff.b_blob.data_stream.read())
+            #testcase_after.write(diff.b_blob.data_stream.read())
+            testcase_after = diff.b_blob.data_stream.read()
         except AttributeError:
-            testcase_after.write(json.dumps([]))
+            #testcase_after.write(json.dumps([]))
             after_file_is_empty = True
 
         testcase_before.flush()
@@ -164,15 +166,17 @@ def main():
         #print subprocess.check_output(['cat', testcase_before.name])
         #TODO: Reduce this duplication to a function
         if not before_file_is_empty: #TODO:remove this flag?
-            before_json += json.loads(subprocess.check_output([script_dir + '/moztrap_integration/markdown-testfile-to-json/cli.js', testcase_before.name]))
-            flatten_before_json = flatten(before_json)
+            #before_json += json.loads(subprocess.check_output([script_dir + '/moztrap_integration/markdown-testfile-to-json/cli.js', testcase_before.name]))
+            #flatten_before_json = flatten(before_json)
+            flatten_before_json = testcase_before
             for testcase_json in flatten_before_json:
                 testcase_json['instructions'] = expand_table_if_exist(testcase_json)
                 testcase_json['instructions'] = orm.parseCaseStep(testcase_json['instructions'])
 
         if not after_file_is_empty:
-            after_json += json.loads(subprocess.check_output([script_dir + '/moztrap_integration/markdown-testfile-to-json/cli.js', testcase_after.name]))
-            flatten_after_json = flatten(after_json)
+            #after_json += json.loads(subprocess.check_output([script_dir + '/moztrap_integration/markdown-testfile-to-json/cli.js', testcase_after.name]))
+            #flatten_after_json = flatten(after_json)
+            flatten_after_json = testcase_after
             for testcase_json in flatten_after_json:
                 testcase_json['instructions'] = expand_table_if_exist(testcase_json)
                 testcase_json['instructions'] = orm.parseCaseStep(testcase_json['instructions'])
