@@ -43,7 +43,7 @@ for testcases_location in testcases_locations:
             test_cases_json.append({
                 'id': test_case[0],
                 'instructions':test_case[1], # need to parse it
-                'suite':[] # need to decide suite
+                'suites':[] # need to decide suite
             })
             #print u"Title: {}".format(test_case[0])
             #print u"-----\n{}\n=====\n".format(test_case[1])

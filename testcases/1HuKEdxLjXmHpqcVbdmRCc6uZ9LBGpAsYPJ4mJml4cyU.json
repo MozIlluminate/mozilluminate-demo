@@ -1,0 +1,158 @@
+[
+  {
+    "suites": [], 
+    "state": "active", 
+    "id": "Test Case", 
+    "instructions": "Test Steps"
+  }, 
+  {
+    "suites": [], 
+    "state": "active", 
+    "id": "File a Bug FTE", 
+    "instructions": "1. Launch Bugzilla Lite app\n2. Tap '+' to file a bug\n    >> The pop up will display only the first time the user views the \u2018File a Bug\u2019 page.\n    >> Please check all strings of the pop up window. (BugzillaLite_IxD.pdf, page 16)"
+  }, 
+  {
+    "suites": [], 
+    "state": "active", 
+    "id": "Log out from Bugzilla Lite app", 
+    "instructions": "1. Launch Bugzilla Lite app and login with correct username and password\n    >> The user will be brought to the \"Assigned\" tab as its default.\n2. Tap Profile Icon\n    >> User can view his/her profile\n3. Tap 'Logout'\n    >> Successfully logout and return to login page"
+  }, 
+  {
+    "suites": [], 
+    "state": "active", 
+    "id": "Check all strings for Login Errors and Network Error", 
+    "instructions": "1. Launch Bugzilla Lite app and login with wrong username and password \n    >> Login Errors\n    >> Please check all strings. (BugzillaLite_Ixd.pdf, page 15)\n2. Disconnect your Network\n3. Login to Bugzilla Lite app again\n    >> Network Error\n    >> Please check all strings. (BugzillaLite_Ixd.pdf, page 15)"
+  }, 
+  {
+    "suites": [], 
+    "state": "active", 
+    "id": "Submit bug from log captured", 
+    "instructions": "1. Long press the hardware key(volume up+down) to capture log\n2. Drag down Notifcations \n3. Tap 'Device logs saved'\n     >> Options include: Bugzilla Lite, E-Mail and Cancel\n4. Select the 'Bugzilla Lite' button\n5. Tap 'Attach' \n6. Fill out title and description fields \n7. Tap 'Submit' \n    >> It will redrect to login page\n8. Enter Login information \n    >> Successfully submit a bug \n    >> Navigate to the bug page once a bug is submitted"
+  }, 
+  {
+    "suites": [], 
+    "state": "active", 
+    "id": "Log in with different user accounts", 
+    "instructions": "1. Launch Bugzilla Lite app and login with username and password\n    >> Successfully login and see the Dashboard in Bugzilla Lite app\n2. Log out and login again with different account\n    >> Successfully login and see different bug info"
+  }, 
+  {
+    "suites": [], 
+    "state": "active", 
+    "id": "Submit bug with logs", 
+    "instructions": "1. Long press the hardware key (volume up+down) to capture log\n2. Select all logs for attachment \n3. Tap 'Submit'\n    >> Warning message 'You must enter a summary for this bug'\n4. Tap OK\n    >> Back to 'File a Bug' page \n5. Fill out Title and Description > Tap 'Submit'\n    >> Successfully filed a bug"
+  }, 
+  {
+    "suites": [], 
+    "state": "active", 
+    "id": "Log catpture multiple times", 
+    "instructions": "1. Long press the hardware key (volume up+down) to capture log continuously\n    >> No failures, logs saved successfully"
+  }, 
+  {
+    "suites": [], 
+    "state": "active", 
+    "id": "User can view attachment", 
+    "instructions": "User can view all attachments in File a Bug page"
+  }, 
+  {
+    "suites": [], 
+    "state": "active", 
+    "id": "User can attach massive logs and non-txt files ", 
+    "instructions": "1. Attach 30 logs\n2. Attach 10 screenshots\n3. Attach 2 videos (each file size < 1M)\n4. Attach 2 videos (each file size >= 1M) \n5. Submit \n    >> All files should be attached successfully"
+  }, 
+  {
+    "suites": [], 
+    "state": "active", 
+    "id": "Submit bug with attachments", 
+    "instructions": "1. Press the hardware key(volume up+down) to capture log\n2. Drag down Notifcations \n3. Tap 'Device logs saved'\n     >> Options include: Bugzilla Lite, E-Mail and Cancel\n4. Tap 'Bugzilla Lite' \nSelect all log files for attachment\n3. Deselect a few files\n   >> Files taken off\n4. Add an attachment for each of the areas listed in description\n   >> successfully filed a bug"
+  }, 
+  {
+    "suites": [], 
+    "state": "active", 
+    "id": "Log captured from different screens", 
+    "instructions": "1. Press the hardware key(volume up+down) to capture log in  any screen/page. (Homescreen, Other apps and lockscreen)\n    >> logs saved successfully"
+  }, 
+  {
+    "suites": [], 
+    "state": "active", 
+    "id": "Perform bug actions", 
+    "instructions": "1. User can view bug information easily\n2. User can view bug information in Details tab easily\n3. User can view bug attachment in Attachments tab easily\n4. User can add comments on the bug\n    >> In bugzilla-dev website (https://goo.gl/DDN3xS), the comments should be added\n5. User can view bug list that he/she raised\n6. User can submit a bug easily\n    >> In bugzilla-dev website (https://goo.gl/DDN3xS), the bug should be filed \n7. User can cancel filing a bug easily\n8. User can change status of a bug\n    >> In bugzilla-dev website (https://goo.gl/DDN3xS), the status is changed\n9. User can take a bug\n    >> In bugzilla-dev website (https://goo.gl/DDN3xS), the bug is assigned"
+  }, 
+  {
+    "suites": [], 
+    "state": "active", 
+    "id": "Edits you make on one device appear on all of them.", 
+    "instructions": ""
+  }, 
+  {
+    "suites": [], 
+    "state": "active", 
+    "id": "User can use \"x\" button to erase the summary and description", 
+    "instructions": "1. Login to Bugzilla Lite \n2. Go to File a Bug page\n3. Enter a summary\n4. Tap \"x\" button\n    >> User can use \"x\" button to erase the summary\n5. Enter the description\n6. Tap \"x\" button\n    >> User can use \"x\" button to erase the description"
+  }, 
+  {
+    "suites": [], 
+    "state": "active", 
+    "id": "Scroll bar", 
+    "instructions": "1. User can scroll the bar smoothly to see all bug comments \n2. User can scroll the bar smoothly to see all raised bugs \n3. User can type many characters in description and the scroll bar of description field can be scrolled smoothly"
+  }, 
+  {
+    "suites": [], 
+    "state": "active", 
+    "id": "Bug comment", 
+    "instructions": "1. User can feedback many comments\n2. User can view a single bug with many comments\n3. User can view many raised bugs"
+  }, 
+  {
+    "suites": [], 
+    "state": "active", 
+    "id": "Dashboard Tabs", 
+    "instructions": "1. User can view all bugs in \u201cAssigned\u201d tab\n    >> Bug list will include: Bug number, title and date modified. \n2. User can view all bugs in \u201cFlagged\u201d tab\n    >> Bug list will include: Bug number, title and date modified. \n3. User can view all bugs in \u201cFiled\u201d tab \n    >> Bug list will include: Bug number, title and date modified. "
+  }, 
+  {
+    "suites": [], 
+    "state": "active", 
+    "id": "User can assign QA contact to himself in Detail page\n", 
+    "instructions": "1. Login to Bugzilla Lite\n2. Chose a bug\n3. Go to Detail page\n    >> The Detail view is the same shown in the spec, page 7"
+  }, 
+  {
+    "suites": [], 
+    "state": "active", 
+    "id": "Search Bugs", 
+    "instructions": "1. User can type characters in search field to search bug\n    >> return related search results\n2. User can cancel searching bugs\n    >> return to Bugzilla lite home page"
+  }, 
+  {
+    "suites": [], 
+    "state": "active", 
+    "id": "User can search information about the \"RESOLVED-FIXED\" bug using it's ID ", 
+    "instructions": "1. Tap 'Search' \n2. Typing 1188749 or other Bug_ID (The Bug status is RESOLVED-FIXED.)\n    >> Return related search results"
+  }, 
+  {
+    "suites": [], 
+    "state": "active", 
+    "id": "Each of the dashboard tabs will be able to reveal the search bar", 
+    "instructions": "1. Launch Bugzilla Lite app and log in\n    >> The user will be brought to the \u201cAssigned\u201d tab as its the default. \n2. Tap the search field > Enter the text you\u2019re looking for.\n    >> Return related search results\n3. Tap 'Cancel'\n    >> Return to the Assigned tab\n4. Tap Flagged > Tap the search field > Enter the text you\u2019re looking for.\n    >> Return related search results\n5. Tap 'Cancel'\n    >> Return to the Flagged tab\n6. Tap Filed > Tap the search field > Enter the text you\u2019re looking for.\n    >> Return related search results\n7. Tap 'Cancel'\n    >> Return to the Filed list"
+  }, 
+  {
+    "suites": [], 
+    "state": "active", 
+    "id": "Special Characters", 
+    "instructions": "1. User can easily input non-english characters and special characters in comments\n2. User can type long length strings in title and input many characters in description"
+  }, 
+  {
+    "suites": [], 
+    "state": "active", 
+    "id": "After canceling bugs via pressing hardware key, user will go back to original screen/app", 
+    "instructions": "1. Long press the hardware key (volume up+down) to capture log\n2. Tap 'Device logs saved'\n    >> Options include: Bugzilla Lite, E-Mail and Cancel\n3. Select 'Cancel' button\n    >> User will go back to original screen/app, and the original screen/app should work well.\n"
+  }, 
+  {
+    "suites": [], 
+    "state": "active", 
+    "id": "User can attach logs in E-Mail easily", 
+    "instructions": "1. Long press the hardware key (volume up+down) to capture log\n2. Tap 'Device logs saved'\n     >> Options include: Bugzilla Lite, E-Mail and Cancel\n3. Select the 'E-Mail' button\n    >> The email client will launch on the compose new email draft. \n    >> The user's email will be included in the \"To\" category."
+  }, 
+  {
+    "suites": [], 
+    "state": "active", 
+    "id": "Limited storage size", 
+    "instructions": "1. Gather logs via pressing hardware key \n    >> Error shows storage full"
+  }
+]
