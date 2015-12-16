@@ -57,6 +57,6 @@
     ], 
     "state": "active", 
     "id": "Foo bar haha", 
-    "instructions": "Do this and do that\n  -- Magic happens\nDo more "
+    "instructions": "Do this and do that\n  -- Magic happens\nDo more \n  -- More magic happens!!"
   }
 ]
