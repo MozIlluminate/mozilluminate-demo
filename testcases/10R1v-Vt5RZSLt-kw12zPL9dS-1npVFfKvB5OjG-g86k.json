@@ -3,7 +3,7 @@
     "suites": [
       "Mozilluminate Test Sheet"
     ], 
-    "description": "The user \ufffdfirst accessess the '\ufffdFile a Bug' page.  boo", 
+    "description": "The user \ufffdfirst accessess the '\ufffdFile a Bug' page.  ", 
     "tags": [
       "bug 1156225"
     ], 
@@ -15,7 +15,7 @@
     "suites": [
       "Mozilluminate Test Sheet"
     ], 
-    "description": "User can successfully log out from Bugzilla Lite app boo", 
+    "description": "User can successfully log out from Bugzilla Lite app", 
     "tags": [
       "bug 1156225"
     ], 
@@ -39,12 +39,24 @@
     "suites": [
       "Mozilluminate Test Sheet"
     ], 
-    "description": "After pressing hardware key (volume up+down) to submit bug will redirect to login page. \n\nPrereq: NOT login to Bugzilla Lite app boo", 
+    "description": "After pressing hardware key (volume up+down) to submit bug will redirect to login page. \n\nPrereq: NOT login to Bugzilla Lite app", 
     "tags": [
       "bug 1156225"
     ], 
     "state": "active", 
     "id": "Submit bug from log captured", 
     "instructions": "1. Long press the hardware key(volume up+down) to capture log\n2. Drag down Notifcations \n3. Tap 'Device logs saved'\n     >> Options include: Bugzilla Lite, E-Mail and Cancel\n4. Select the 'Bugzilla Lite' button\n5. Tap 'Attach' \n6. Fill out title and description fields \n7. Tap 'Submit' \n    >> It will redrect to login page\n8. Enter Login information \n    >> Successfully submit a bug \n    >> Navigate to the bug page once a bug is submitted"
+  }, 
+  {
+    "suites": [
+      "Mozilluminate Test Sheet"
+    ], 
+    "description": "This is the pre-requsite", 
+    "tags": [
+      "bug 99999"
+    ], 
+    "state": "active", 
+    "id": "Foo bar haha", 
+    "instructions": "Do this and do that\n  >> Magic happens"
   }
 ]
