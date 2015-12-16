@@ -15,7 +15,7 @@
     "description": "User can successfully log out from Bugzilla Lite app", 
     "state": "active", 
     "id": "Log out from Bugzilla Lite app", 
-    "instructions": "All changed! hahahaha"
+    "instructions": "Test step111"
   }, 
   {
     "suites": [
