@@ -152,8 +152,8 @@ def main():
             #testcase_after.write(json.dumps([]))
             after_file_is_empty = True
 
-        testcase_before.flush()
-        testcase_after.flush()
+        #testcase_before.flush()
+        #testcase_after.flush()
 
         before_json = []
         after_json = []
@@ -168,7 +168,7 @@ def main():
         if not before_file_is_empty: #TODO:remove this flag?
             #before_json += json.loads(subprocess.check_output([script_dir + '/moztrap_integration/markdown-testfile-to-json/cli.js', testcase_before.name]))
             #flatten_before_json = flatten(before_json)
-            flatten_before_json = testcase_before
+            flatten_before_json = json.loads(testcase_before)
             for testcase_json in flatten_before_json:
                 testcase_json['instructions'] = expand_table_if_exist(testcase_json)
                 testcase_json['instructions'] = orm.parseCaseStep(testcase_json['instructions'])
@@ -176,7 +176,8 @@ def main():
         if not after_file_is_empty:
             #after_json += json.loads(subprocess.check_output([script_dir + '/moztrap_integration/markdown-testfile-to-json/cli.js', testcase_after.name]))
             #flatten_after_json = flatten(after_json)
-            flatten_after_json = testcase_after
+            flatten_after_json = json.loads(testcase_after)
+
             for testcase_json in flatten_after_json:
                 testcase_json['instructions'] = expand_table_if_exist(testcase_json)
                 testcase_json['instructions'] = orm.parseCaseStep(testcase_json['instructions'])
