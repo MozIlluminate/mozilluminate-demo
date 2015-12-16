@@ -51,7 +51,7 @@
     "suites": [
       "Mozilluminate Test Sheet"
     ], 
-    "description": "This is the pre-requsite", 
+    "description": "This is the pre-requsite\nMake sure you set up this", 
     "tags": [
       "bug 99999"
     ], 
