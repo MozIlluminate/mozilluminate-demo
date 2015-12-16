@@ -43,8 +43,6 @@ def main():
         test_steps_title = wks.find('Test Steps')
         test_steps_col = wks.col_values(test_steps_title.col)
         test_descriptions_title = wks.find('Descriptions / Prerequisite')
-        import pdb
-        pdb.set_trace()
         test_descriptions_col = wks.col_values(test_descriptions_title.col)
 #cell_list = wks.range('A1:B7')
         #test_cases = zip(test_cases_col, test_steps_col)[1:] #Skip the title row

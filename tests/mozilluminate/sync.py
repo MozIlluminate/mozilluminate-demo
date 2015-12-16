@@ -193,7 +193,7 @@ def main():
 #The mz_user_name and mz_api_key is set in Travis CI
 #mtapi.convert_mark_file_into_moztrap(tmpfile, {'username': os.getenv("mz_user_name"), 'api_key': os.getenv("mz_api_key")})
     #mtapi.load_json_into_moztrap(parsed_json_f.name, {'username': os.getenv("mz_user_name"), 'api_key': os.getenv("mz_api_key")})
-    print diff_outs
+    #print diff_outs
 
     isPR = os.getenv('TRAVIS_PULL_REQUEST')
     if isPR == 'false' or isPR is None: #Don't sync PR builds
