@@ -3,6 +3,7 @@
     "suites": [
       "Mozilluminate Test Sheet"
     ], 
+    "description": "The user \ufffdfirst accessess the '\ufffdFile a Bug' page.  ", 
     "state": "active", 
     "id": "File a Bug FTE", 
     "instructions": "1. Launch Bugzilla Lite app\n2. Tap '+' to file a bug\n    >> The pop up will display only the first time the user views the \u2018File a Bug\u2019 page.\n    >> Please check all strings of the pop up window. (BugzillaLite_IxD.pdf, page 16)"
@@ -11,14 +12,16 @@
     "suites": [
       "Mozilluminate Test Sheet"
     ], 
+    "description": "User can successfully log out from Bugzilla Lite app", 
     "state": "active", 
     "id": "Log out from Bugzilla Lite app", 
-    "instructions": "This is the second time I change this"
+    "instructions": "All changed! hahahaha"
   }, 
   {
     "suites": [
       "Mozilluminate Test Sheet"
     ], 
+    "description": "", 
     "state": "active", 
     "id": "Check all strings for Login Errors and Network Error", 
     "instructions": "1. Launch Bugzilla Lite app and login with wrong username and password \n    >> Login Errors\n    >> Please check all strings. (BugzillaLite_Ixd.pdf, page 15)\n2. Disconnect your Network\n3. Login to Bugzilla Lite app again\n    >> Network Error\n    >> Please check all strings. (BugzillaLite_Ixd.pdf, page 15)"
@@ -27,6 +30,7 @@
     "suites": [
       "Mozilluminate Test Sheet"
     ], 
+    "description": "After pressing hardware key (volume up+down) to submit bug will redirect to login page. \n\nPrereq: NOT login to Bugzilla Lite app", 
     "state": "active", 
     "id": "Submit bug from log captured", 
     "instructions": "1. Long press the hardware key(volume up+down) to capture log\n2. Drag down Notifcations \n3. Tap 'Device logs saved'\n     >> Options include: Bugzilla Lite, E-Mail and Cancel\n4. Select the 'Bugzilla Lite' button\n5. Tap 'Attach' \n6. Fill out title and description fields \n7. Tap 'Submit' \n    >> It will redrect to login page\n8. Enter Login information \n    >> Successfully submit a bug \n    >> Navigate to the bug page once a bug is submitted"
