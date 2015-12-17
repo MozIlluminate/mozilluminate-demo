@@ -8,6 +8,13 @@ MozIlluminate allows you to write test cases in Google spreadsheet, and automati
 * Easy to read/edit/search with Google spreadsheet
 * Version control with GitHub
 * Test execution and reporting from MozTrap
+
+#Prerequisite
+* Use Linux or Mac OSX
+* Install python and pip
+* `sudo pip install oauth2client gspread`
+  * If the installation failedon OSX due to the `six` package deprecation, run the command with  flag `--ignore-installed six`
+
 #Usage 
 
 1. Write your test cases in Google Spreadsheet ([example](https://docs.google.com/spreadsheets/d/10R1v-Vt5RZSLt-kw12zPL9dS-1npVFfKvB5OjG-g86k/edit#gid=491677371))
@@ -26,3 +33,7 @@ MozIlluminate allows you to write test cases in Google spreadsheet, and automati
 
 # Known Issues
 * Tags don't work write now, blocked by https://github.com/mozilla/moztrap/pull/101
+* Product Version is hard-coded to v2.5.
+* Only supports one suite per test case (the spreadsheet name).
+* Environments are not handled
+* All test case steps goes into the first step on MozTrap, need to define a test step format.

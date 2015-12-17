@@ -9,7 +9,7 @@
     ], 
     "state": "active", 
     "id": "File a Bug FTE", 
-    "instructions": "1. Launch Bugzilla Lite app\n2. Tap '+' to file a bug\n    >> The pop up will display only the first time the user views the \u2018File a Bug\u2019 page.\n    >> Please check all strings of the pop up window. (BugzillaLite_IxD.pdf, page 16)"
+    "instructions": "1. reboot device\n2. Launch Bugzilla Lite app\n3. Tap '+' to file a bug\n    >> The pop up will display only the first time the user views the \u2018File a Bug\u2019 page.\n    >> Please check all strings of the pop up window. (BugzillaLite_IxD.pdf, page 16)"
   }, 
   {
     "suites": [
