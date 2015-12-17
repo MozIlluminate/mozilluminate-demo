@@ -57,7 +57,7 @@
     ], 
     "state": "active", 
     "id": "Foo bar haha", 
-    "instructions": "Do this and do that\n  -- Magic happens\nDo more \n  -- More magic happens!!"
+    "instructions": "Change this foo bar"
   }, 
   {
     "suites": [
