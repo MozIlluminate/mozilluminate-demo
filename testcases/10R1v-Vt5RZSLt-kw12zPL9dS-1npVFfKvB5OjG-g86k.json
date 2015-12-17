@@ -58,5 +58,17 @@
     "state": "active", 
     "id": "Foo bar haha", 
     "instructions": "Do this and do that\n  -- Magic happens\nDo more \n  -- More magic happens!!"
+  }, 
+  {
+    "suites": [
+      "Mozilluminate Test Suite"
+    ], 
+    "description": "foo", 
+    "tags": [
+      "TAGGGG"
+    ], 
+    "state": "active", 
+    "id": "test tag", 
+    "instructions": "foo"
   }
 ]
