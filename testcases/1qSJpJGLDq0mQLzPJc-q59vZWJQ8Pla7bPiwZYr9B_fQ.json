@@ -1,0 +1,147 @@
+[
+  {
+    "suites": [
+      "Test MozIlluminate Cases 001"
+    ], 
+    "description": "", 
+    "tags": [
+      "fte", 
+      "simulator", 
+      "tv"
+    ], 
+    "state": "active", 
+    "id": "[TV FTE] FTE Settings - Disable App Usage", 
+    "instructions": "1. First time to experience TV\n  >>> * The first page should be Mozilla Privacy Policy\n* OK button should be gray\n\n\n2. Press OK\n  >>> User cannot press OK button to go to the next page\n\n3. Press Up or Down to read all the legal words\n  >>> The legal words should be correct. Please see the attachment.\n\n4. Scroll to the bottom of Mozilla privacy policy\n  >>> The user has to read all the legal words in Mozilla Privacy Policy page\n\n5. Press OK\n  >>> * OK button should be blue\n* User can press OK button to go to the next page.\n* The next page is \"About Firefox OS\"\n\n6. Press OK\n  >>> * OK button should be blue\n* The default highlight is OK button.\n* All words should be correct. Please see the attachment.\n* User can press OK button to go to the next page\n* The next page is \"About Firefox OS\"\n\n7. Press OK\n  >>> * The default highlight is Yes button\n* The legal words should be correct. Please see the attachment.\n\n"
+  }, 
+  {
+    "suites": [
+      "Test MozIlluminate Cases 001"
+    ], 
+    "description": "Reference: FTE Spec v2.5, pages 4-7", 
+    "tags": [
+      "fte", 
+      "simulator", 
+      "tv-smoketest", 
+      "tv"
+    ], 
+    "state": "active", 
+    "id": "[TV FTE] FTE Settings - Enable App Usage", 
+    "instructions": "1. Launch Apps Deck\n  >>> \n\n2. Launch \"TV FTU\" app\n  >>> * The first page should be Mozilla Privacy Policy\n* The default highlight is OK button\n* OK button should be gray\n\n3. Press OK\n  >>> User cannot press OK button to go to the next page\n\n4. Press Up or Down to read all the legal words\n  >>> * User can scroll up and down well\n* Every word of the policy is correct\n\n5. Scroll to the bottom of \"Mozilla Privacy Policy\" page\n  >>> * The user has to read all the legal words in Mozilla Privacy Policy page\n* OK button should be blue when scrolling to the bottom of \"Mozilla Privacy Policy\" page\n\n6. Press OK\n  >>> * User can press OK button to go to the next page.\n* The next page is \"About Firefox OS\"\n* OK button should be blue\n\n7. Press OK\n  >>> * The default highlight is OK button.\n* All words should be correct. \n* User can press OK button to go to the next page\n* The next page is \"About Firefox OS\"\n\n8. Press OK\n  >>> * The default highlight is Yes button\n* The legal words should be correct. \n* User can press OK button to go to the next page\n* The next page is another \"About Firefox OS\"\n\n9. Press OK\n  >>> * User will exit \"TV FTU\" app\n* User will go back to Apps Deck\n\n"
+  }, 
+  {
+    "suites": [
+      "Test MozIlluminate Cases 001"
+    ], 
+    "description": "Reference: FTE Spec v2.5, pages 9-12", 
+    "tags": [
+      "fte", 
+      "simulator", 
+      "tv-smoketest", 
+      "tv"
+    ], 
+    "state": "active", 
+    "id": "[TV FTE] Home Tutorial ", 
+    "instructions": "1. Power on TV to launch FTE\n  >>> * Label each app with short description\n* Please check all strings and icons\n* The default highlight is Next button\n* Next button should be blue\n\n\n2. Press OK\n  >>> * User can press OK button to go to the next page\n* Label icons: Search, settings, add a folder, filter\n* Please check all strings and icons\n* The default highlight is OK button\n* OK button should be blue\n\n3. Press OK\n  >>> User will go to home page\n\n"
+  }, 
+  {
+    "suites": [
+      "Test MozIlluminate Cases 001"
+    ], 
+    "description": "Reference: FTE Spec v2.5, pages 13-15", 
+    "tags": [
+      "fte", 
+      "simulator", 
+      "tv-smoketest", 
+      "tv"
+    ], 
+    "state": "active", 
+    "id": "[TV FTE] Option menu ", 
+    "instructions": "1. After Home tutorial, launch any app or TV channel \n  >>> \n\n2. Press Option \n  >>> * Tutorial - Option Menu will be popped up \n\n3. Check all strings and icons\n  >>> All words and icons should be correct\n\n4. Press OK\n  >>> * The Tutorial - Option Menu will disappear on your screen.\n* Back to the option menu that you want \n\n"
+  }, 
+  {
+    "suites": [
+      "Test MozIlluminate Cases 001"
+    ], 
+    "description": "First Time Experience\nReference: FTE Spec v2.5, pages 18-20", 
+    "tags": [
+      "fte", 
+      "simulator", 
+      "tv-smoketest", 
+      "tv"
+    ], 
+    "state": "active", 
+    "id": "[TV FTE] Tutorial (Send to TV) - Send tab to your TV", 
+    "instructions": "1. Launch \"Send to TV\" app in Apps Deck\n  >>> \n\n2. Check all strings and icons \n  >>> * All strings and icons are correct in \"Step 1 of 2\" page \n* The default highlight is Next button\n* Next button should be blue\n\n3. Press OK \n  >>> User can go to next page  \n\n4. Check all strings and icons\n  >>> * All strings and icons are correct in \"Step 2 of 2\" page \n* Default highlight is \"Learn how to send tab from your Android device\"\n* \"Learn how to send tab from your Android device\" button should be blue\n\n5. Press OK\n  >>> User can go to next page\n\n6. Check all strings and icons\n\n  >>> * All strings and icons are correct in \"Send tab to your TV\" page \n* Default highlight is \u201cDone\" button\n* Done button should be blue\n\n7. Scan QR-Code with to download and install add-on on your Android device\n  >>> User can download and install add-on to Firefox on your Android device\n\n8. Use the url link to download and install add-on on your Android device\n  >>> User can download and install add-on to Firefox on your Android device\n\n9. Press OK\n  >>> User can exit \"Send to TV\" app\n\n"
+  }, 
+  {
+    "suites": [
+      "Test MozIlluminate Cases 001"
+    ], 
+    "description": "First Time Experience\nReference: FTE Spec v2.5, pages 18-20", 
+    "tags": [
+      "fte", 
+      "simulator", 
+      "tv"
+    ], 
+    "state": "active", 
+    "id": "[TV FTE] Tutorial (Send to TV)", 
+    "instructions": "1. Launch \"Send to TV\" app in Apps Deck\n  >>> \n\n2. Check all strings and icons \n  >>> * All strings and icons are correct in \"Step 1 of 2\" page \n* The default highlight is Next button\n* Next button should be blue\n\n3. Press OK \n  >>> User can go to next page  \n\n4. Check all strings and icons\n  >>> * All strings and icons are correct in \"Step 2 of 2\" page \n* Default highlight is \"Learn how to send tab from your Android device\"\n* \"Learn how to send tab from your Android device\" button should be blue\n\n5. Press arrow key to move the focus on \"Done\" button\n  >>> \n\n6. Press OK\n  >>> User will exit \"Send to TV\" app \n\n"
+  }, 
+  {
+    "suites": [
+      "Test MozIlluminate Cases 001"
+    ], 
+    "description": "First Time Experience\nReference: FTE Spec v2.5, pages 18-20", 
+    "tags": [
+      "fte", 
+      "simulator", 
+      "tv-smoketest", 
+      "tv"
+    ], 
+    "state": "active", 
+    "id": "[TV FTE] Browser - Account", 
+    "instructions": "1. Launch Browser app after Home Tutorial\n  >>> * Next button should be blue\n\n\n2. Check all strings and icons \n  >>> * All strings and icons are correct\n* Default highlight is \u201cSign In\"\n* \u201cSign In\" button should blue\n\n3. Press OK \n  >>> User can go to the Account-Sign in page  \n\n"
+  }, 
+  {
+    "suites": [
+      "Test MozIlluminate Cases 001"
+    ], 
+    "description": "First Time Experience\nReference: FTE Spec v2.5, pages 21-22", 
+    "tags": [
+      "fte", 
+      "simulator", 
+      "tv"
+    ], 
+    "state": "active", 
+    "id": "[TV FTE] Browser - Skip", 
+    "instructions": "1. Launch Browser app after Home Tutorial\n  >>> \n\n2. Check all strings and icons \n  >>> * All strings and icons are correct\n* Default highlight is \u201cSign In\"\n* \u201cSign In\" button should blue\n\n3. Press arrow key to move the focus on \"Skip\" button\n  >>> \"Skip\" button should be white\n\n4. Press OK \n  >>> * User will exit Browser tutorial\n* User will go to Browser app\n\n"
+  }, 
+  {
+    "suites": [
+      "Test MozIlluminate Cases 001"
+    ], 
+    "description": "Reference: FTE Spec v2.5", 
+    "tags": [
+      "fte", 
+      "simulator", 
+      "tv"
+    ], 
+    "state": "active", 
+    "id": "[TV FTE] FTE Settings - Back button", 
+    "instructions": "1. Launch Apps Deck\n  >>> \n\n2. Launch \"TV FTU\" \n  >>> \n\n3. Press OK twice \n  >>> * User will go to another \"About\" page\n\n4. Press Back twice\n  >>> * User will go to the  \"Mozilla Privacy Policy\" page\n\n5. Press Back again\n  >>> * User can exit \"TV FTU\"\n* User will go back to Apps Deck\n\n"
+  }, 
+  {
+    "suites": [
+      "Test MozIlluminate Cases 001"
+    ], 
+    "description": "First Time Experience\nReference: FTE Spec v2.5, pages 24", 
+    "tags": [
+      "fte", 
+      "simulator", 
+      "tv"
+    ], 
+    "state": "active", 
+    "id": "[TV FTE] Offline tutorial (Send to TV)", 
+    "instructions": "1. Offline\n  >>> \n\n2. Launch Apps Deck\n  >>> \n\n3. Launch \"Send to TV\" app \n  >>> User will go to \"Offline Tutorial\" page\n\n4. Check all strings and icons\n  >>> * All strings and icons are correct \n* Default highlight is \"OK\" button\n* \"OK\" button should be blue\n\n5. Press OK\n  >>> User will go back to App Deck\n\n"
+  }
+]
