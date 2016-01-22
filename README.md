@@ -12,8 +12,8 @@ MozIlluminate allows you to write test cases in Google spreadsheet, and automati
 #Prerequisite
 * Use Linux or Mac OSX
 * Install python and pip
-* `sudo pip install oauth2client gspread`
-  * If the installation failedon OSX due to the `six` package deprecation, run the command with  flag `--ignore-installed six`
+* `sudo pip install oauth2client gspread openpyxl`
+  * If the installation failed on OSX due to the `six` package deprecation, run the command with  flag `--ignore-installed six`
 
 #Usage 
 

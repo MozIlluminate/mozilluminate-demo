@@ -2,6 +2,7 @@
 2. ./moztrap.py clone a moztrap.mozilla.org suite
 3. Upload the xlsx to google spreadsheet
 4. Add the bot user as described in mozilluminate readme
+5. Make sure the product version in the moztrapcli/config.py matches the one on the moztrap-dev server. If the productversion doesn't exist on moztrap-dev, add it manually
 5. Go to MozIlluminate
 6. Run commit.sh
 7. Go to Travis CI
