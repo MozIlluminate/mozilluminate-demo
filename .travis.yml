@@ -2,5 +2,5 @@ sudo: false
 before_install:
   - cd ./tests/mozilluminate/moztrap_integration/markdown-testfile-to-json/; npm install ./; cd ../../../../;
 install:
-  - pip install --user requests gitpython
+  - pip install --user requests gitpython gspread oauth2client openpyxl
 script: "cd ./tests/mozilluminate; python sync.py"
