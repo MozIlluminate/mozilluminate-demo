@@ -142,6 +142,6 @@
     ], 
     "state": "active", 
     "id": "[TV FTE] Offline tutorial (Send to TV)", 
-    "instructions": "1. Offline\n  >>> \n\n2. Launch Apps Deck\n  >>> \n\n3. Launch \"Send to TV\" app \n  >>> User will go to \"Offline Tutorial\" page\n\n4. Check all strings and icons\n  >>> * All strings and icons are correct \n* Default highlight is \"OK\" button\n* \"OK\" button should be blue\n\n5. Press OK\n  >>> User will go back to App Deck\n\n"
+    "instructions": "1. Offline\n  >>> \n\n2. Launch Apps Deck\n  >>> The App Deck is launched\n\n3. Launch \"Send to TV\" app \n  >>> User will go to \"Offline Tutorial\" page\n\n4. Check all strings and icons\n  >>> * All strings and icons are correct \n* Default highlight is \"OK\" button\n* \"OK\" button should be blue\n\n5. Press OK\n  >>> User will go back to App Deck\n\n"
   }
 ]
