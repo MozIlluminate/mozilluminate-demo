@@ -186,7 +186,6 @@ def main():
         # diff = (add, modify, remove)
         #print json.dumps(diff_out, indent=3)
 
-
     #parsed_json_f = tempfile.NamedTemporaryFile()
 
     mtapi.mtorigin = "https://moztrap-dev.allizom.org"

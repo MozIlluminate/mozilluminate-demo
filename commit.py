@@ -41,6 +41,7 @@ def main():
         test_case_title = wks.find('Test Case') #TODO: case insensitive?
         test_cases_col = wks.col_values(test_case_title.col)
         test_steps_title = wks.find('Test Steps')
+        # TODO: parse the steps
         test_steps_col = wks.col_values(test_steps_title.col)
         test_descriptions_title = wks.find('Descriptions / Prerequisite')
         test_descriptions_col = wks.col_values(test_descriptions_title.col)

@@ -28,6 +28,13 @@ MozIlluminate allows you to write test cases in Google spreadsheet, and automati
 8. Once the script finished without error, Go to https://travis-ci.org/MozIlluminate/mozilluminate-demo/builds to see the test cases being synced to MozTrap-dev
 9. Go to https://moztrap-dev.allizom.org/manage/cases/ to see your new test cases.
 
+# How it works
+* When you run `commit.sh`, the script downloads the google spreadsheet and transform it into a local json file
+* Then the `commit.sh` script does `git add`, `git commit` and `git push`
+* Travis CI server detects the push, and run the `.travis.yml` file
+* The `.travis.yml` file triggers the `tests/MozIlluminate/sync.py`
+* `tests/MozIlluminate/sync.py` checks for the diff between HEAD and HEAD~1 and push the difference to MozTrap throught its REST API
+
 # Admins
 * Shing Lyu (slyu@mozilla.com)
 
