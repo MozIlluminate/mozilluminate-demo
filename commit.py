@@ -2,6 +2,7 @@
 import json
 from oauth2client.client import SignedJwtAssertionCredentials
 import gspread
+import re
 
 def get_key_from_url(url):
     m1 = gspread.client._url_key_re_v1.search(url)
@@ -38,14 +39,18 @@ def main():
 #wks.update_acell('B2', "it's down there somewhere, let me take another look.")
 
 # Fetch a cell range
-        test_case_title = wks.find('Test Case') #TODO: case insensitive?
+        title_re = re.compile(r'(Test Case)', re.IGNORECASE)
+        test_case_title = wks.find(title_re) #TODO: case insensitive?
         test_cases_col = wks.col_values(test_case_title.col)
-        test_steps_title = wks.find('Test Steps')
+        steps_re = re.compile(r'((Test |)Steps)', re.IGNORECASE)
+        test_steps_title = wks.find(steps_re)
         # TODO: parse the steps
         test_steps_col = wks.col_values(test_steps_title.col)
-        test_descriptions_title = wks.find('Descriptions / Prerequisite')
+        desc_re = re.compile(r'(Description[s]? \/ Prerequisite[s]?|Description[s]?|Prerequisite[s]?)', re.IGNORECASE)
+        test_descriptions_title = wks.find(desc_re)
         test_descriptions_col = wks.col_values(test_descriptions_title.col)
-        test_tags_title = wks.find('Tag')
+        tag_re = re.compile(r'(Tag[s]?)', re.IGNORECASE)
+        test_tags_title = wks.find(tag_re)
         test_tags_col = wks.col_values(test_tags_title.col)
 #cell_list = wks.range('A1:B7')
         #test_cases = zip(test_cases_col, test_steps_col)[1:] #Skip the title row
