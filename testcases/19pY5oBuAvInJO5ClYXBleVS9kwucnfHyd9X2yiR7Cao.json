@@ -1,0 +1,350 @@
+[
+  {
+    "suites": [
+      "Test Case - Data Sync TV"
+    ], 
+    "description": "First time using browser on TV", 
+    "tags": [
+      ""
+    ], 
+    "state": "active", 
+    "id": "User is able to enable Firefox Sync the first time the browser is open", 
+    "instructions": "1. On TV go to Browser menu\n>> Welcome Firefox screen is shown\n>> There are options to Sign in or Skip\n2. Tap on Skip\n>> Browser main view is open\n3. Tap on Sign in\n>> Firefox account menu is shown\n4. Go through the log in process\n>> User is able to log in succesfully\n>> A success screen is shown with an OK button\n5. Tap on Ok\n>> Browser settings screen is shown\n>> Firefox Sync account appears with the correct options\n\n"
+  }, 
+  {
+    "suites": [
+      "Test Case - Data Sync TV"
+    ], 
+    "description": "Firefox Account user should be an already Firefox Sync user that has been enabled before on desktop or android", 
+    "tags": [
+      ""
+    ], 
+    "state": "active", 
+    "id": "User can enable Firefox Sync whe there is not any Firefox Account user logged yet", 
+    "instructions": "1. Open browser and go to its settings menu\n>> Browser settings screen is shown\n2. Tap on Sign in to Sync\n>> Firefox Account Sign in screen is shown\n3. Complete Firefox Accounts flow with an existing Firefox Sync user\n>> Browser settings screen is shown showing the Firefox Account used\n>> Options to Sync Now and Sign Out are shown\n>> Collections appear with Bookmarks selected by default"
+  }, 
+  {
+    "suites": [
+      "Test Case - Data Sync TV"
+    ], 
+    "description": "User has not enabled Sync before on Desktop or Android", 
+    "tags": [
+      ""
+    ], 
+    "state": "active", 
+    "id": "User cannot enable Firefox Sync if the user has not enabled Sync on Desktop or android before", 
+    "instructions": "1. Open browser and go to its settings menu\n>> Browser settings screen is shown\n2. Tap on Sign in to Sync\n>> Firefox Account Sign in screen is shown\n3. Complete Firefox Accounts flow with an NOT existing Firefox Sync user\n>> This account is inactive message is shown\n4. Tap on OK\n>> Browser setting screen is shown \n>> Firefox Sync Sing In button is active"
+  }, 
+  {
+    "suites": [
+      "Test Case - Data Sync TV"
+    ], 
+    "description": "User has not verified his/her Firefox Account yet", 
+    "tags": [
+      ""
+    ], 
+    "state": "active", 
+    "id": "User cannot enable Firefox Sync with an unverified Firefox Account", 
+    "instructions": "1. Open browser and go to its settings menu\n>> Browser settings screen is shown\n2. Tap on Sign in to Sync\n>> Firefox Account Sign in screen is shown\n3. Introduce a NOT existing Firefox Account\n>> Unknown account message is shown\n4. Tap on Ok\n>> Browser settings screen is shown\n>> Firefox Sync Sign In button is enabled"
+  }, 
+  {
+    "suites": [
+      "Test Case - Data Sync TV"
+    ], 
+    "description": "", 
+    "tags": [
+      ""
+    ], 
+    "state": "active", 
+    "id": "User can logout and login with a different account", 
+    "instructions": "1. Open browser and go to its settings menu\n>> Browser settings screen is shown\n2. Tap on Sign in to Sync\n>> Firefox Account Sign in screen is shown\n3. Introduce a n existing Firefox Account used enabled in Sync\n>> Log in is successful\n4. On Firefox Sync menu, enable History collection\n>> History is synced\n5. Check both History and Bookmarks synced\n>> Both History and Bookmarks are the correct one for the user logged in\n6. Sign out from Firefox Sync\n>> User is logged out\n7. Sign in wih a different account\n>> Bookmarks are shown correctly according to the Firefox sync user logged in\n>> History is shown correctly according to the Firefox sync user logged in"
+  }, 
+  {
+    "suites": [
+      "Test Case - Data Sync TV"
+    ], 
+    "description": "The device has not enabled data or Wi-Fi connection", 
+    "tags": [
+      ""
+    ], 
+    "state": "active", 
+    "id": "User should be notified that network connection is needed to start using the app", 
+    "instructions": "1. Open browser and go to its settings menu\n>> Browser settings screen is shown\n2. Tap on Sign in to Sync\n>> Firefox Account Sign in screen is shown\n3. Introduce a n existing Firefox Account used enabled in Sync\n>> There should be an error message letting user know that network connection is needed"
+  }, 
+  {
+    "suites": [
+      "Test Case - Data Sync TV"
+    ], 
+    "description": "Firefox Account already exists", 
+    "tags": [
+      ""
+    ], 
+    "state": "active", 
+    "id": "User should get a warning when the password is incorrect", 
+    "instructions": "1. Open browser and go to its settings menu \n>> Browser settings screen is shown \n2. Tap on Sign in to Sync \n>> Firefox Account Sign in screen is shown \n3. Introduce a valid Firefox Account but an invalid password\n>> Invalid password screen is shown\n4. Tap on OK\n>> Enter your password screen is shown"
+  }, 
+  {
+    "suites": [
+      "Test Case - Data Sync TV"
+    ], 
+    "description": "Firefox Sync has been enabled on the device", 
+    "tags": [
+      ""
+    ], 
+    "state": "active", 
+    "id": "User can disable Data Sync", 
+    "instructions": "1. Open browser and go to its settings menu\n>> Browser settings screen is shown\n2. On Firefox Sync section, tap on Sign Out\n>> There is a warning message giving the option to Sign Out or to Cancel\n3. Tap on Sign Out\n>> A message letting user know that he had signed out is shown\n4. Tap on OK\n>> Browser settings menu is shown, no Firefox Sync account appears\n>> Firefox Sync Sign In button is enabled"
+  }, 
+  {
+    "suites": [
+      "Test Case - Data Sync TV"
+    ], 
+    "description": "", 
+    "tags": [
+      ""
+    ], 
+    "state": "active", 
+    "id": "User can see if he is logged in in Firefox sync or not in Browser menu options", 
+    "instructions": "1. Open browser and tap on its menu button\n>> Among the options there is Sign in to Sync\n2. Tap on Sing in to Sync and complete the flow to log in\n>> User is successfully logged in\n3. Open browser menu again\n>> Among the options it should appear the Firefox Account used for Firefox Sync instead of Sign in to Sync option"
+  }, 
+  {
+    "suites": [
+      "Test Case - Data Sync TV"
+    ], 
+    "description": "Firefox Sync has been enabled on the device", 
+    "tags": [
+      ""
+    ], 
+    "state": "active", 
+    "id": "User can see the initial status of the Firefox Sync app", 
+    "instructions": "1. Open browser and go to its settings menu \n>> Browser settings screen is shown \n2. Tap on Sign in to Sync \n>> Firefox Account Sign in screen is shown \n3. Complete Firefox Accounts flow with an existing Firefox Sync user \n>> Browser settings screen is shown showing the Firefox Account used \n>> HIstory and Bookmarks collections appear\n>> Bookmarks is selected by default"
+  }, 
+  {
+    "suites": [
+      "Test Case - Data Sync TV"
+    ], 
+    "description": "Firefox Sync has been enabled on the device", 
+    "tags": [
+      ""
+    ], 
+    "state": "active", 
+    "id": "User can enable history collection", 
+    "instructions": "1. Open browser and go to its menu \n>> Browser settings screen is shown \n2. Tap on Sign in to Sync \n>> Firefox Account Sign in screen is shown \n3. Complete Firefox Accounts flow with an existing Firefox Sync user \n>> Browser settings screen is shown showing the Firefox Account used \n>> HIstory and Bookmarks collections appear\n>> Bookmarks is selected by default\n4. Tap on history collection and then on Sync now\n>> Please enter your password screen is shown ** Only if user does not low the privacy level, then this screen will not be shown\n5. Enter the password and tap on OK\n>> Browser settings screen is shown with both Bookmarks and History collections enabled"
+  }, 
+  {
+    "suites": [
+      "Test Case - Data Sync TV"
+    ], 
+    "description": "Firefox Sync has been enabled on the device", 
+    "tags": [
+      ""
+    ], 
+    "state": "active", 
+    "id": "User can disable collections", 
+    "instructions": "1. Open browser and tap on its menu -> settings\n>> Browser settings screen is shown showing the Firefox Account used \n>> HIstory and Bookmarks collections appear\n>> Bookmarks is selected by default\n4. Tap on history collection\n>> Please enter your password screen is shown ** Only if user does not low the privacy level, then this screen will not be shown\n5. Enter the password and tap on OK\n>> Browser settings screen is shown with both Bookmarks and History collections enabled\n6. Disable both collections\n>> Sync now button should be disabled\n7. Enable both collections\n>> Password screen is shown so that user can enable again both collections"
+  }, 
+  {
+    "suites": [
+      "Test Case - Data Sync TV"
+    ], 
+    "description": "Firefox Sync has been enabled on the device", 
+    "tags": [
+      ""
+    ], 
+    "state": "active", 
+    "id": "User can check the Terms of Service and Privacy", 
+    "instructions": "1. On browser setting screen go to Terms of Service\n>> Should open a window and browse to: https://accounts.firefox.com/legal/terms\n>> ??? If no connection, the network error dialog should be shown."
+  }, 
+  {
+    "suites": [
+      "Test Case - Data Sync TV"
+    ], 
+    "description": "Firefox Sync has been enabled on the device", 
+    "tags": [
+      ""
+    ], 
+    "state": "active", 
+    "id": "User can check the Privacy Note", 
+    "instructions": "1. On browser setting screen go to Terms of Service\n>> Should open a window and browse to: https://accounts.firefox.com/legal/privacy\n>> ??? If no connection, the network error dialog should be shown."
+  }, 
+  {
+    "suites": [
+      "Test Case - Data Sync TV"
+    ], 
+    "description": "Firefox Sync has been enabled on the device", 
+    "tags": [
+      ""
+    ], 
+    "state": "active", 
+    "id": "User can close Terms of Service and Privacy window", 
+    "instructions": "1. On browser setting screen go to Terms of Service\n>> Should open a window and browse to: https://accounts.firefox.com/legal/terms\n2. Go back\n>> Browser main page is shown\n"
+  }, 
+  {
+    "suites": [
+      "Test Case - Data Sync TV"
+    ], 
+    "description": "Firefox Sync has been enabled on the device", 
+    "tags": [
+      ""
+    ], 
+    "state": "active", 
+    "id": "User can see when the Sync can be done, it is being done", 
+    "instructions": "1. On browser settings tap on Sync Now\n>> Button label changes to Syncing"
+  }, 
+  {
+    "suites": [
+      "Test Case - Data Sync TV"
+    ], 
+    "description": "Firefox Sync has been enabled on the device", 
+    "tags": [
+      ""
+    ], 
+    "state": "active", 
+    "id": "User can Sync to get his/her collections updated", 
+    "instructions": "1. On browser settings check the status of Sync now button\n>> If there is at least one collection selected, it is enabled\n>> If all collections are unselected the button should be disabled"
+  }, 
+  {
+    "suites": [
+      "Test Case - Data Sync TV"
+    ], 
+    "description": "User has been logged with Firefox Account and enabled Firefox Sync on the device", 
+    "tags": [
+      ""
+    ], 
+    "state": "active", 
+    "id": "User can see the account he is using for Firefox Sync", 
+    "instructions": "1. Tap on Browser settings menu button\n>> Among the options as user is already logged it should appear his account instad of Sign in to Sync\n2. On browser settings check the Firefox Sync account shown\n>> It should appear the Firefox Account mail used for log in"
+  }, 
+  {
+    "suites": [
+      "Test Case - Data Sync TV"
+    ], 
+    "description": "Sync has been enabled in Desktop or Android.\nUser is logged with Firefox Account in the device", 
+    "tags": [
+      ""
+    ], 
+    "state": "active", 
+    "id": "User can see the history for the enabled Sync account when logging in the device", 
+    "instructions": "1. Open browser settings menu and tap on History\n>> History should be empty, no Synced folder should appear\n2. On Firefox Sync tap on History Collection to enable it\n>> Please enter your password screen is shown\n3. Enter the correct password\n>> Firefox Sync menu is shown with History enabled\n4. Open browser menu and tap on History option\n>> This history shown is the correct one for the Sync user logged in"
+  }, 
+  {
+    "suites": [
+      "Test Case - Data Sync TV"
+    ], 
+    "description": "Sync has been enabled in Desktop or Android.\nUser is logged with Firefox Account in the device and has used Firefox Sync already", 
+    "tags": [
+      ""
+    ], 
+    "state": "active", 
+    "id": "User can see the new history entries when Syncing on the device", 
+    "instructions": "1. Open the browser and go to Firefox Sync \n>> Firefox Sync menu is shown correctly\n2. Open History and check it is synced correctly\n>> The history should be the same than in browser\n3. On desktop browser go to a web site\n>> That web site is shown in its hisory\n4. Go to Firefox Sync again and tap on Sync Now button\n>> Sync button changes to Syncing and the button is greyed\n5. Open Browser on TV and check the history\n>> The last entry on desktop history should be shown\""
+  }, 
+  {
+    "suites": [
+      "Test Case - Data Sync TV"
+    ], 
+    "description": "User is logged in in Firefox Sync", 
+    "tags": [
+      ""
+    ], 
+    "state": "active", 
+    "id": "User can enable or disable the collections", 
+    "instructions": "1. In browser settings menu enable History\n>> The checkbox can be marked\n2. Tap on Sync\n>> History is updated\n3. In browser settings menu disable History\n>> The checkbox is disabled\n4. Tap on Sync\n>> History is NOT updated"
+  }, 
+  {
+    "suites": [
+      "Test Case - Data Sync TV"
+    ], 
+    "description": "Syn enabled in desktop and there are some history saved for a user.", 
+    "tags": [
+      ""
+    ], 
+    "state": "active", 
+    "id": "User can remove the history from desktop", 
+    "instructions": "1. In browser settings menu enable History\n>> The checkbox can be marked\n2. Tap on Sync\n>> History is updated\n3. On desktop remove all history\n>> The history for sync user is now empty\n4. On TV browser got to Sync and tap on Sync now\n>> History should be empty\n"
+  }, 
+  {
+    "suites": [
+      "Test Case - Data Sync TV"
+    ], 
+    "description": "User is logged in in Firefox Sync and using Sync on desktop or android", 
+    "tags": [
+      ""
+    ], 
+    "state": "active", 
+    "id": "User can see a maximum of 20 history entries in the device", 
+    "instructions": "1. On TV browser open History\n>> There should be 500 entries maximum"
+  }, 
+  {
+    "suites": [
+      "Test Case - Data Sync TV"
+    ], 
+    "description": "There are history synced", 
+    "tags": [
+      ""
+    ], 
+    "state": "active", 
+    "id": "User can move on Bookmarks menu", 
+    "instructions": "1. On browser main view, tap on Menu > History option\n>> Device history list is shown\n>> There should be a Synced History folder\n2. Tap on Synced History folder\n>> The history synced is shown\n>> There is an option to go back"
+  }, 
+  {
+    "suites": [
+      "Test Case - Data Sync TV"
+    ], 
+    "description": "User is logged in in Firefox Sync and using Sync on desktop or android having there several bookmarks", 
+    "tags": [
+      ""
+    ], 
+    "state": "active", 
+    "id": "User can see his bookmarks stored in desktop on the TV", 
+    "instructions": "1. Sign in to Sync\n>> The log in has been done successfully\n2. On browser main view tap on Bookmark option\n>> Synced bookmarks folder....\n>> Same bookmarks that can be seen in Desktop for Sync user"
+  }, 
+  {
+    "suites": [
+      "Test Case - Data Sync TV"
+    ], 
+    "description": "User is logged in in Firefox Sync and using Sync on desktop or android having there several bookmarks\nUser has at least 201 bookmarks stored", 
+    "tags": [
+      ""
+    ], 
+    "state": "active", 
+    "id": "User can see a maximum of 200 bookmarks", 
+    "instructions": "1. Sign in to Sync\n>> The log in has been done successfully\n2. On browser main view tap on Bookmark option\n>> Synced bookmarks folder....\n>> Same bookmarks that can be seen in Desktop for Sync user\n3. Open Synced bookmarks\n>> All bookmarks should appear"
+  }, 
+  {
+    "suites": [
+      "Test Case - Data Sync TV"
+    ], 
+    "description": "User is logged in in Firefox Sync and using Sync on desktop or android having there several bookmarks", 
+    "tags": [
+      ""
+    ], 
+    "state": "active", 
+    "id": "User can update his bookmarks to have the latest saved in desktop", 
+    "instructions": "1. Open the browser and go to Firefox Sync \n>> Firefox Sync menu is shown correctly\n2. Open Bookmarks and check it is synced correctly\n>> The bookmarks should be the same than in browser\n3. On desktop browser go to a web site and mark it as bookmark\n>> That web site is shown in its bookmarks list\n4. Go to Firefox Sync again and tap on Sync Now button\n>> Sync button changes to Syncing and the button is greyed\n5. Open Browser on TV and check the Bookmarks\n>> The last bookmarked site in desktop should be shown"
+  }, 
+  {
+    "suites": [
+      "Test Case - Data Sync TV"
+    ], 
+    "description": "User is logged in in Firefox Sync and using Sync on desktop or android having there several bookmarks", 
+    "tags": [
+      ""
+    ], 
+    "state": "active", 
+    "id": "User can remove the saved bookmarks", 
+    "instructions": "1. Open the browser and go to Firefox Sync \n>> Firefox Sync menu is shown correctly\n2. Open Bookmarks and check it is synced correctly\n>> The bookmarks should be the same than in browser\n3. On desktop browser remove all bookmarks\n>> Bookmarks list is empty\n4. Go to Firefox Sync again and tap on Sync Now button\n>> Sync button changes to Syncing and the button is greyed\n5. Open Browser on TV and check the Bookmarks\n>> Bookmarks have been removed"
+  }, 
+  {
+    "suites": [
+      "Test Case - Data Sync TV"
+    ], 
+    "description": "There are bookmarks synced", 
+    "tags": [
+      ""
+    ], 
+    "state": "active", 
+    "id": "User can move on Bookmarks menu", 
+    "instructions": "1. On browser main view, tap on Bookmark option\n>> Bookmarks list is shown\n>> There should be a Synced Bookmarks folder\n2. Tap on Synced Bookmarks folder\n>> The bookmarks synced are shown\n>> There is an option to go back"
+  }
+]
